@@ -10,15 +10,25 @@
 
 <body class="bg-slate-50 text-slate-800 min-h-screen flex items-center justify-center p-4 md:p-8">
 
-    <div class="max-w-3xl w-full bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-6 md:p-12 text-center border border-slate-100">
+    <div class="max-w-3xl w-full bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-6 md:p-12 text-center border border-slate-100 relative">
+        
+        <!-- 우측 상단 언어 전환 토글 버튼 -->
+        <div class="absolute top-6 right-6 md:top-8 md:right-8 flex items-center bg-slate-100 p-1 rounded-xl text-xs font-medium">
+            <button id="btn-en" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-xs">
+                English
+            </button>
+            <button id="btn-ko" onclick="setLanguage('ko')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900">
+                한국어
+            </button>
+        </div>
         
         <!-- 상단 헤더 섹션 -->
-        <div class="mb-10">
+        <div class="mb-10 mt-6 sm:mt-0">
             <div class="text-5xl mb-4 inline-block bg-slate-100 p-4 rounded-2xl">📱</div>
             <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
                 nBit Apps
             </h1>
-            <p class="text-slate-500 max-w-md mx-auto text-sm md:text-base leading-relaxed">
+            <p id="main-desc" class="text-slate-500 max-w-md mx-auto text-sm md:text-base leading-relaxed">
                 Official application website and support portal for mobile applications developed by nBit AppStudio.
             </p>
         </div>
@@ -34,9 +44,9 @@
                         S
                     </div>
                     <h3 class="font-bold text-lg text-slate-900 mb-1">SkyRush</h3>
-                    <p class="text-slate-500 text-xs leading-normal">Official Website</p>
+                    <p class="app-subtext text-slate-500 text-xs leading-normal">Official Website</p>
                 </div>
-                <div class="mt-6 text-indigo-600 font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <div class="app-action mt-6 text-indigo-600 font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Open App →
                 </div>
             </a>
@@ -49,9 +59,9 @@
                         E
                     </div>
                     <h3 class="font-bold text-lg text-slate-900 mb-1">EveryTimer</h3>
-                    <p class="text-slate-500 text-xs leading-normal">Official Website</p>
+                    <p class="app-subtext text-slate-500 text-xs leading-normal">Official Website</p>
                 </div>
-                <div class="mt-6 text-emerald-600 font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <div class="app-action mt-6 text-emerald-600 font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Open App →
                 </div>
             </a>
@@ -64,9 +74,9 @@
                         M
                     </div>
                     <h3 class="font-bold text-lg text-slate-900 mb-1">MemberBook</h3>
-                    <p class="text-slate-500 text-xs leading-normal">Official Website</p>
+                    <p class="app-subtext text-slate-500 text-xs leading-normal">Official Website</p>
                 </div>
-                <div class="mt-6 text-orange-600 font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <div class="app-action mt-6 text-orange-600 font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Open App →
                 </div>
             </a>
@@ -79,9 +89,9 @@
                         A
                     </div>
                     <h3 class="font-bold text-lg text-slate-900 mb-1">Antitheft</h3>
-                    <p class="text-slate-500 text-xs leading-normal">Official Website</p>
+                    <p class="app-subtext text-slate-500 text-xs leading-normal">Official Website</p>
                 </div>
-                <div class="mt-6 text-blue-600 font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <div class="app-action mt-6 text-blue-600 font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Open App →
                 </div>
             </a>
@@ -90,11 +100,56 @@
 
         <!-- 하단 인증 안내 섹션 -->
         <div class="border-t border-slate-100 pt-6 text-xs text-slate-400 leading-relaxed max-w-md mx-auto">
-            <p>This domain is verified and used for Google OAuth and Gmail API services.</p>
-            <p class="mt-1 font-light">본 도메인은 Google OAuth 및 Gmail API 서비스용으로 인증된 공식 도메인입니다.</p>
+            <p id="oauth-desc">This domain is verified and used for Google OAuth and Gmail API services.</p>
         </div>
 
     </div>
+
+    <!-- 다국어 변환 스크립트 -->
+    <script>
+        const translations = {
+            en: {
+                mainDesc: "Official application website and support portal for mobile applications developed by nBit AppStudio.",
+                subtext: "Official Website",
+                action: "Open App →",
+                oauth: "This domain is verified and used for Google OAuth and Gmail API services."
+            },
+            ko: {
+                mainDesc: "nBit AppStudio에서 개발한 모바일 애플리케이션의 공식 웹사이트 및 지원 포털입니다.",
+                subtext: "공식 웹사이트",
+                action: "앱 열기 →",
+                oauth: "본 도메인은 Google OAuth 및 Gmail API 서비스용으로 인증된 공식 도메인입니다."
+            }
+        };
+
+        function setLanguage(lang) {
+            // <html> 태그의 lang 속성 변경
+            document.documentElement.lang = lang;
+
+            // 텍스트 일괄 변경
+            document.getElementById('main-desc').innerText = translations[lang].mainDesc;
+            document.getElementById('oauth-desc').innerText = translations[lang].oauth;
+
+            document.querySelectorAll('.app-subtext').forEach(el => {
+                el.innerText = translations[lang].subtext;
+            });
+            document.querySelectorAll('.app-action').forEach(el => {
+                el.innerText = translations[lang].action;
+            });
+
+            // 버튼 스타일 활성화/비활성화 처리
+            const btnEn = document.getElementById('btn-en');
+            const btnKo = document.getElementById('btn-ko');
+
+            if (lang === 'en') {
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-xs";
+                btnKo.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900";
+            } else {
+                btnKo.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-xs";
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900";
+            }
+        }
+    </script>
 
 </body>
 </html>
