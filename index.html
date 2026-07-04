@@ -46,7 +46,7 @@
         
         <!-- 히어로 섹션 (Hero Section) -->
         <header class="text-center space-y-6 max-w-3xl mx-auto pt-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 white text-indigo-700 rounded-full text-xs font-semibold tracking-wider uppercase">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-semibold tracking-wider uppercase">
                 🚀 Innovation in Your Pocket
             </div>
             <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
@@ -66,22 +66,21 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- SkyRush -->
-                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group md:col-span-1">
-                    <div>
-                        <div class="w-12 h-12 bg-indigo-600 text-white flex items-center justify-center text-2xl font-bold rounded-2xl mb-6 shadow-md shadow-indigo-200 group-hover:scale-105 transition-transform">
+                <a href="./skyrush/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group md:col-span-1">
+                    <div class="flex items-start gap-5">
+                        <!-- 🐻‍❄️ 아이콘 영역: 추후 이미지 파일로 교체 가능 -->
+                        <!-- 예: <img src="./skyrush/icon.png" alt="SkyRush Icon" class="w-16 h-16 rounded-2xl object-cover shadow-md group-hover:scale-105 transition-transform"> -->
+                        <div class="w-16 h-16 bg-indigo-600 text-white flex items-center justify-center text-3xl font-bold rounded-2xl flex-shrink-0 shadow-lg shadow-indigo-100 group-hover:scale-105 transition-transform">
                             🐻‍❄️
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">SkyRush</h3>
-                        <p id="desc-skyrush" class="text-slate-500 text-sm leading-relaxed mb-6">
-                            An exhilarating 2D action game featuring a brave polar bear tackling dynamic environmental challenges. Built with stunning visual frameworks.
-                        </p>
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">SkyRush</h3>
+                            <p id="desc-skyrush" class="text-slate-500 text-sm leading-relaxed">
+                                An exhilarating 2D action game featuring a brave polar bear tackling dynamic environmental challenges. Built with stunning visual frameworks.
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <a href="./skyrush/" id="btn-skyrush" class="inline-flex items-center justify-center w-full px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-sm">
-                            Explore SkyRush Official Website →
-                        </a>
-                    </div>
-                </div>
+                </a>
             </div>
         </section>
 
@@ -94,58 +93,49 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- EveryTimer -->
-                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group">
-                    <div>
-                        <div class="w-12 h-12 bg-emerald-600 text-white flex items-center justify-center text-2xl font-bold rounded-2xl mb-6 shadow-md shadow-emerald-200 group-hover:scale-105 transition-transform">
+                <a href="./everyTimer/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="flex items-start gap-5">
+                        <div class="w-16 h-16 bg-emerald-600 text-white flex items-center justify-center text-3xl font-bold rounded-2xl flex-shrink-0 shadow-lg shadow-emerald-100 group-hover:scale-105 transition-transform">
                             ⏱️
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">EveryTimer</h3>
-                        <p id="desc-everytimer" class="text-slate-500 text-sm leading-relaxed mb-6">
-                            The ultimate high-performance interval and routine multi-timer suite engineered perfectly for workouts, deep study, and precision task management.
-                        </p>
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">EveryTimer</h3>
+                            <p id="desc-everytimer" class="text-slate-500 text-sm leading-relaxed">
+                                The ultimate high-performance interval and routine multi-timer suite engineered perfectly for workouts, deep study, and precision task management.
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <a href="./everyTimer/" id="btn-everytimer" class="inline-flex items-center justify-center w-full px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-sm">
-                            Explore EveryTimer Official Website →
-                        </a>
-                    </div>
-                </div>
+                </a>
 
                 <!-- MemberBook -->
-                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group">
-                    <div>
-                        <div class="w-12 h-12 bg-orange-600 text-white flex items-center justify-center text-2xl font-bold rounded-2xl mb-6 shadow-md shadow-orange-200 group-hover:scale-105 transition-transform">
+                <a href="./memberbook/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="flex items-start gap-5">
+                        <div class="w-16 h-16 bg-orange-600 text-white flex items-center justify-center text-3xl font-bold rounded-2xl flex-shrink-0 shadow-lg shadow-orange-100 group-hover:scale-105 transition-transform">
                             📖
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">MemberBook</h3>
-                        <p id="desc-memberbook" class="text-slate-500 text-sm leading-relaxed mb-6">
-                            A robust, highly integrated directory framework built to coordinate team registries, active attendance, and unified cloud organization flawlessly.
-                        </p>
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">MemberBook</h3>
+                            <p id="desc-memberbook" class="text-slate-500 text-sm leading-relaxed">
+                                A robust, highly integrated directory framework built to coordinate team registries, active attendance, and unified cloud organization flawlessly.
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <a href="./memberbook/" id="btn-memberbook" class="inline-flex items-center justify-center w-full px-5 py-3 bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-sm">
-                            Explore MemberBook Official Website →
-                        </a>
-                    </div>
-                </div>
+                </a>
 
                 <!-- Antitheft -->
-                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group">
-                    <div>
-                        <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center text-2xl font-bold rounded-2xl mb-6 shadow-md shadow-blue-200 group-hover:scale-105 transition-transform">
+                <a href="./antitheft/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="flex items-start gap-5">
+                        <div class="w-16 h-16 bg-blue-600 text-white flex items-center justify-center text-3xl font-bold rounded-2xl flex-shrink-0 shadow-lg shadow-blue-100 group-hover:scale-105 transition-transform">
                             🔒
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Antitheft</h3>
-                        <p id="desc-antitheft" class="text-slate-500 text-sm leading-relaxed mb-6">
-                            An advanced security platform leveraging military-grade APIs to capture unauthorized intruder telemetry and send evidence securely to your box.
-                        </p>
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">Antitheft</h3>
+                            <p id="desc-antitheft" class="text-slate-500 text-sm leading-relaxed">
+                                An advanced security platform leveraging military-grade APIs to capture unauthorized intruder telemetry and send evidence securely to your box.
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <a href="./antitheft/" id="btn-antitheft" class="inline-flex items-center justify-center w-full px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-sm">
-                            Explore Antitheft Official Website →
-                        </a>
-                    </div>
-                </div>
+                </a>
             </div>
         </section>
 
@@ -169,7 +159,7 @@
         </div>
     </footer>
 
-    <!-- 실시간 다국어 변환 엔진 (카테고리 텍스트 맵핑 추가) -->
+    <!-- 실시간 다국어 변환 엔진 -->
     <script>
         const translations = {
             en: {
@@ -211,20 +201,6 @@
             document.getElementById('desc-everytimer').innerText = translations[lang].everytimerDesc;
             document.getElementById('desc-memberbook').innerText = translations[lang].memberbookDesc;
             document.getElementById('desc-antitheft').innerText = translations[lang].antitheftDesc;
-
-            // 버튼 텍스트 변경
-            const apps = ['skyrush', 'everytimer', 'memberbook', 'antitheft'];
-            apps.forEach(app => {
-                const properName = app === 'skyrush' ? 'SkyRush' : 
-                                   app === 'everytimer' ? 'EveryTimer' : 
-                                   app === 'memberbook' ? 'MemberBook' : 'Antitheft';
-                
-                if(lang === 'ko') {
-                    document.getElementById(`btn-${app}`).innerText = `${properName} 공식 웹사이트 바로가기 →`;
-                } else {
-                    document.getElementById(`btn-${app}`).innerText = `Explore ${properName} Official Website →`;
-                }
-            });
 
             // 토글 버튼 클래스 갱신
             const btnEn = document.getElementById('btn-en');
