@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemberBook - Official Website</title>
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- 상단 글로벌 네비게이션 바 -->
+    <nav class="max-w-6xl w-full mx-auto px-6 py-6 flex flex-col sm:flex-row gap-4 justify-between items-center">
+        <!-- 첫 페이지로 이동하는 홈버튼 링크 -->
+        <a href="../" class="flex items-center gap-2 group cursor-pointer decoration-none">
+            <span class="text-2xl transition-transform group-hover:scale-110">⚡</span>
+            <span class="font-black text-xl tracking-tight text-slate-900 group-hover:text-orange-600 transition-colors">nBit AppStudio</span>
+        </a>
+        
+        <!-- [우측 상단] 실시간 언어 전환 탭 토글 버튼 -->
+        <div class="flex items-center bg-slate-200/60 p-1 rounded-xl text-xs font-semibold backdrop-blur-md">
+            <button id="btn-en" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm">
+                English
+            </button>
+            <button id="btn-ko" onclick="setLanguage('ko')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900">
+                한국어
+            </button>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-6 py-12 space-y-20">
+        
+        <!-- 히어로 섹션 (Hero Section) -->
+        <header class="text-center space-y-6 max-w-3xl mx-auto pt-4">
+            <div class="inline-block relative">
+                <!-- assets 폴더 안의 실제 이미지 아이콘 적용 -->
+                <img src="../assets/memberbook_icon.png" alt="MemberBook Icon" class="w-24 h-24 rounded-3xl object-cover shadow-xl border border-slate-100 mx-auto">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                MemberBook
+            </h1>
+            <p id="hero-desc" class="text-slate-500 text-base md:text-xl leading-relaxed max-w-2xl mx-auto">
+                A robust, highly integrated directory framework built to coordinate team registries, active attendance, and unified cloud organization flawlessly.
+            </p>
+            
+            <div class="pt-2">
+                <a href="https://play.google.com/store/apps/details?id=com.nbit.memberbook"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-md shadow-orange-100">
+                    Available on Google Play →
+                </a>
+            </div>
+        </header>
+
+        <!-- 핵심 기능 섹션 -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                <span class="text-2xl">📖</span>
+                <h2 id="title-features" class="text-2xl font-black tracking-tight text-slate-900 uppercase">Core Features</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
+                        👥
+                    </div>
+                    <h3 id="f1-title" class="text-xl font-bold text-slate-900">Member Directory</h3>
+                    <p id="f1-desc" class="text-slate-500 text-sm leading-relaxed">
+                        Effortlessly structure registry profiles, sort custom fields, and navigate extensive organization rosters with ease.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
+                        ✅
+                    </div>
+                    <h3 id="f2-title" class="text-xl font-bold text-slate-900">Attendance Tracker</h3>
+                    <p id="f2-desc" class="text-slate-500 text-sm leading-relaxed">
+                        Log presence status in real time and monitor consistency trends over custom group sessions with rapid interface macros.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
+                        ☁️
+                    </div>
+                    <h3 id="f3-title" class="text-xl font-bold text-slate-900">Cloud Automation</h3>
+                    <p id="f3-desc" class="text-slate-500 text-sm leading-relaxed">
+                        Synchronize internal data instantly with Google Sheets via secure cloud tools for immediate data manipulation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 법적 고지 및 약관 섹션 -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                <span class="text-2xl">⚖️</span>
+                <h2 id="title-privacy" class="text-2xl font-black tracking-tight text-slate-900 uppercase">Privacy & Terms</h2>
+            </div>
+
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 text-center max-w-2xl mx-auto p-10 space-y-6">
+                <p id="privacy-desc" class="text-slate-500 text-sm md:text-base leading-relaxed">
+                    We value your privacy. MemberBook is committed to protecting user data and providing a safe mobile environment. Read our legal documentation below.
+                </p>
+                
+                <div class="text-base font-semibold space-x-6 pt-6 border-t border-slate-100 flex justify-center">
+                    <a id="link-privacy-body" href="./privacy-policy.html" class="text-orange-600 underline hover:text-orange-800 transition-colors">Privacy Policy</a>
+                    <a id="link-terms-body" href="./terms.html" class="text-orange-600 underline hover:text-orange-800 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 고급스러운 하단 푸터 -->
+    <footer class="bg-slate-900 text-slate-400 mt-24 py-12 px-6 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-5xl mx-auto space-y-4">
+            <div class="flex justify-center gap-6 text-sm text-slate-400 mb-2">
+                <a id="link-privacy-footer" href="./privacy-policy.html" class="hover:text-white transition-colors underline">Privacy Policy</a>
+                <a id="link-terms-footer" href="./terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="mailto:handykim17@gmail.com" class="hover:text-white transition-colors">Support</a>
+            </div>
+            <p id="footer-desc" class="text-slate-500 max-w-md mx-auto leading-relaxed">
+                This website is the official homepage of the MemberBook mobile application and provides information regarding app features, privacy practices, and terms of service.
+            </p>
+            <p class="text-slate-600 font-medium">
+                &copy; 2026 nBit AppStudio. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 실시간 번역 전환 처리 스크립트 -->
+    <script>
+        const translations = {
+            en: {
+                heroDesc: "A robust, highly integrated directory framework built to coordinate team registries, active attendance, and unified cloud organization flawlessly.",
+                titleFeatures: "Core Features",
+                f1Title: "Member Directory",
+                f1Desc: "Effortlessly structure registry profiles, sort custom fields, and navigate extensive organization rosters with ease.",
+                f2Title: "Attendance Tracker",
+                f2Desc: "Log presence status in real time and monitor consistency trends over custom group sessions with rapid interface macros.",
+                f3Title: "Cloud Automation",
+                f3Desc: "Synchronize internal data instantly with Google Sheets via secure cloud tools for immediate data manipulation.",
+                titlePrivacy: "Privacy & Terms",
+                privacyDesc: "We value your privacy. MemberBook is committed to protecting user data and providing a safe mobile environment. Read our legal documentation below.",
+                textPrivacy: "Privacy Policy",
+                textTerms: "Terms of Service",
+                footerDesc: "This website is the official homepage of the MemberBook mobile application and provides information regarding app features, privacy practices, and terms of service.",
+                urlPrivacy: "./privacy-policy.html",
+                urlTerms: "./terms.html"
+            },
+            ko: {
+                heroDesc: "단체의 회원 명부 관리, 정밀한 출석 체크 및 강력한 클라우드 스프레드시트 툴 연동 시스템을 통해 조직을 완벽히 조율하는 효율적인 관리자 프레임워크입니다.",
+                titleFeatures: "핵심 앱 기능",
+                f1Title: "회원 명부 일괄 관리",
+                f1Desc: "구성원들의 프로필 구조를 자유롭게 커스텀하여 필드를 정렬하고, 대규모 명부 데이터를 한눈에 신속하게 파악하세요.",
+                f2Title: "실시간 출석 상태 분석",
+                f2Desc: "지정된 그룹 세션마다 개별 출결 상황을 클릭 몇 번으로 빠르게 입력하고, 누적 출석 추이를 시각적으로 확인하세요.",
+                f3Title: "구글 통합 클라우드 자동화",
+                f3Desc: "구글 앱스 스크립트 웹 앱 인프라와 결합하여 앱 내부 데이터를 구글 스프레드시트로 막힘없이 즉시 동기화합니다.",
+                titlePrivacy: "개인정보 보호 및 약관",
+                privacyDesc: "nBit AppStudio는 단체와 구성원의 개인정보를 강력하게 보호하며, 외부로 유출되지 않는 투명한 아키텍처 환경을 약속합니다.",
+                textPrivacy: "개인정보처리방침",
+                textTerms: "서비스 이용약관",
+                footerDesc: "본 웹사이트는 MemberBook 모바일 애플리케이션의 공식 홈페이지이며, 앱 기능, 개인정보처리방침 및 서비스 이용약관 정보를 제공합니다.",
+                urlPrivacy: "./privacy-policy-ko.html",
+                urlTerms: "./terms-ko.html"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
+            document.getElementById('title-features').innerText = translations[lang].titleFeatures;
+            document.getElementById('title-privacy').innerText = translations[lang].titlePrivacy;
+            document.getElementById('privacy-desc').innerText = translations[lang].privacyDesc;
+            document.getElementById('footer-desc').innerText = translations[lang].footerDesc;
+
+            document.getElementById('f1-title').innerText = translations[lang].f1Title;
+            document.getElementById('f1-desc').innerText = translations[lang].f1Desc;
+            document.getElementById('f2-title').innerText = translations[lang].f2Title;
+            document.getElementById('f2-desc').innerText = translations[lang].f2Desc;
+            document.getElementById('f3-title').innerText = translations[lang].f3Title;
+            document.getElementById('f3-desc').innerText = translations[lang].f3Desc;
+
+            const pBody = document.getElementById('link-privacy-body');
+            const tBody = document.getElementById('link-terms-body');
+            const pFoot = document.getElementById('link-privacy-footer');
+            const tFoot = document.getElementById('link-terms-footer');
+
+            pBody.innerText = translations[lang].textPrivacy;
+            pBody.href = translations[lang].urlPrivacy;
+            tBody.innerText = translations[lang].textTerms;
+            tBody.href = translations[lang].urlTerms;
+
+            pFoot.innerText = translations[lang].textPrivacy;
+            pFoot.href = translations[lang].urlPrivacy;
+            tFoot.innerText = translations[lang].textTerms;
+            tFoot.href = translations[lang].urlTerms;
+
+            const btnEn = document.getElementById('btn-en');
+            const btnKo = document.getElementById('btn-ko');
+
+            if (lang === 'en') {
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm";
+                btnKo.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900";
+            } else {
+                btnKo.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm";
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900";
+            }
+        }
+    </script>
+
+</body>
+</html>
