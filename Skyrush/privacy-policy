@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyRush - Privacy Policy</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; color: #333; max-width: 800px; margin: 0 auto; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 40px; }
+        h2 { color: #2980b9; margin-top: 30px; font-size: 1.2em; }
+        p, li { font-size: 14px; color: #555; }
+        .contact { background: #f9f9f9; padding: 15px; border-left: 5px solid #2980b9; margin: 20px 0; }
+        .lang-divider { border: 0; height: 2px; background: #333; margin: 60px 0 20px 0; }
+        .lang-label { display: inline-block; background: #333; color: #fff; padding: 2px 10px; font-size: 12px; font-weight: bold; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+    <div class="lang-label">ENGLISH</div>
+    <h1>Privacy Policy for SkyRush</h1>
+    <p>This Privacy Policy describes how <strong>SkyRush</strong> (the "Game") collects, uses, and shares your personal information. By using the Game, you agree to the collection and use of information in accordance with this policy.</p>
+
+    <h2>1. Information We Collect</h2>
+    <ul>
+        <li><strong>Login Services (Google Firebase):</strong> Unique User ID (UID) and profile name for user identification via Google and Apple accounts.</li>
+        <li><strong>In-App Purchases:</strong> Purchase receipts to verify transactions. (Payment information is managed by the App Store/Google Play, and we do not collect financial data directly.)</li>
+        <li><strong>Ads & Analytics:</strong> Advertising identifiers (ADID for Android, IDFA for iOS) to provide and analyze advertisements.</li>
+    </ul>
+
+    <h2>2. Use of Personal Information</h2>
+    <ul>
+        <li>To identify users and provide cloud storage for game data (scores, items, etc.).</li>
+        <li>To provide easy login via Google and iOS accounts.</li>
+        <li>To process in-app purchases and recovery of purchased items.</li>
+        <li>To deliver advertisements (Interstitial and Rewarded Ads) and analyze service performance.</li>
+    </ul>
+
+    <h2>3. Third-Party Services</h2>
+    <p>The Game uses the following third-party services which may collect information used to identify you:</p>
+    <ul>
+        <li><strong>Google Firebase:</strong> Authentication and Database management.</li>
+        <li><strong>Google AdMob:</strong> Ad delivery and analytics.</li>
+        <li><strong>Apple (App Store):</strong> iOS login and payment processing.</li>
+    </ul>
+
+    <h2>4. Data Retention and Deletion</h2>
+    <p>We retain your information as long as your account is active. If you request account deletion or stop using the service, we will delete your information without delay, except where retention is required by law.</p>
+
+    <h2>5. Children's Privacy</h2>
+    <p>This Game does not knowingly collect personal information from children under the age of 13. We comply with the Google Play and App Store Family Policies.</p>
+
+    <div class="contact">
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us:</p>
+        <p><strong>Officer:</strong> Donghyun Kim</p>
+        <p><strong>Email:</strong> nbit.handykim@gmail.com</p>
+    </div>
+
+    <p style="font-size: 12px; color: #999;">Last Updated: March 26, 2026</p>
+
+
+    <hr class="lang-divider">
+
+
+    <div class="lang-label">KOREAN</div>
+    <h1>SkyRush 개인정보처리방침</h1>
+    <p>본 방침은 <strong>SkyRush</strong>(이하 '게임')를 이용하는 이용자의 개인정보를 보호하고, 관련 법령을 준수하기 위해 수립되었습니다.</p>
+
+    <h2>1. 수집하는 개인정보 항목 및 방법</h2>
+    <ul>
+        <li><strong>로그인 서비스 (Google Firebase):</strong> 이용자 식별을 위한 구글/애플 계정 고유 ID(UID), 프로필 이름.</li>
+        <li><strong>인앱 결제:</strong> 구매 내역 확인을 위한 결제 영수증 정보 (실제 금융 정보는 스토어에서 관리하며 본 게임은 직접 수집하지 않습니다).</li>
+        <li><strong>광고 및 분석:</strong> 광고 송출 및 성과 분석을 위한 광고 식별자(ADID/IDFA).</li>
+    </ul>
+
+    <h2>2. 개인정보의 이용 목적</h2>
+    <ul>
+        <li>이용자 식별 및 게임 데이터(점수, 아이템 등)의 클라우드 저장.</li>
+        <li>구글 및 iOS 계정을 통한 간편 로그인 제공.</li>
+        <li>인앱 결제 아이템 지급 및 구매 복구 서비스.</li>
+        <li>맞춤형 광고 송출(전면 및 보상형 광고) 및 서비스 개선 분석.</li>
+    </ul>
+
+    <h2>3. 제3자 제공 및 위탁</h2>
+    <p>본 게임은 서비스 제공을 위해 아래와 같은 신뢰할 수 있는 플랫폼의 SDK를 사용합니다.</p>
+    <ul>
+        <li><strong>Google Firebase:</strong> 로그인 인증 및 데이터베이스 관리</li>
+        <li><strong>Google AdMob:</strong> 광고 송출 및 분석</li>
+        <li><strong>Apple (App Store):</strong> iOS 로그인 및 결제 처리</li>
+    </ul>
+
+    <h2>4. 개인정보의 보유 및 파기</h2>
+    <p>이용자가 계정을 삭제하거나 서비스 이용을 중단할 경우, 법령에 따라 보존해야 하는 경우를 제외하고 수집된 정보는 지체 없이 파기됩니다.</p>
+
+    <h2>5. 아동 보호 정책</h2>
+    <p>본 게임은 만 13세 미만의 아동으로부터 의도적으로 개인정보를 수집하지 않으며, 각 스토어의 가족 정책을 준수합니다.</p>
+
+    <div class="contact">
+        <h2>6. 개인정보 보호책임자 및 연락처</h2>
+        <p>본 서비스의 개인정보 보호와 관련하여 아래와 같이 담당자를 지정하고 있습니다.</p>
+        <ul>
+            <li><strong>개인정보 보호책임자:</strong> 김동현</li>
+            <li><strong>문의처:</strong> nbit.handykim@gmail.com</li>
+        </ul>
+    </div>
+
+    <p style="font-size: 12px; color: #999;">최종 수정일: 2026년 3월 26일</p>
+
+</body>
+</html>
