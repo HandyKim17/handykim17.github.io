@@ -5,244 +5,293 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="googlef2e02c5037b028c9" />
     <title>AntiTheft Alarm Record Protect</title>
-
+    <!-- Tailwind CSS v4 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-        }
-    </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <header class="gradient-bg text-white py-20 px-6 text-center shadow-lg">
-        <div class="max-w-4xl mx-auto">
+    <!-- 상단 글로벌 네비게이션 바 -->
+    <nav class="max-w-6xl w-full mx-auto px-6 py-6 flex flex-col sm:flex-row gap-4 justify-between items-center">
+        <!-- 첫 페이지로 이동하는 홈버튼 링크 -->
+        <a href="../" class="flex items-center gap-2 group cursor-pointer decoration-none">
+            <span class="text-2xl transition-transform group-hover:scale-110">⚡</span>
+            <span class="font-black text-xl tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">nBit AppStudio</span>
+        </a>
+        
+        <!-- [우측 상단] 실시간 언어 전환 탭 토글 버튼 -->
+        <div class="flex items-center bg-slate-200/60 p-1 rounded-xl text-xs font-semibold backdrop-blur-md">
+            <button id="btn-en" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm">
+                English
+            </button>
+            <button id="btn-ko" onclick="setLanguage('ko')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900">
+                한국어
+            </button>
+        </div>
+    </nav>
 
-            <div class="text-5xl mb-4">🔒</div>
-
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-6 py-12 space-y-20">
+        
+        <!-- 히어로 섹션 (Hero Section) -->
+        <header class="text-center space-y-6 max-w-3xl mx-auto pt-4">
+            <div class="inline-block relative">
+                <!-- assets 폴더 안의 실제 이미지 아이콘 적용 -->
+                <img src="../assets/antitheft_icon.png" alt="Antitheft Icon" class="w-24 h-24 rounded-3xl object-cover shadow-xl border border-slate-100 mx-auto">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
                 Antitheft
             </h1>
-
-            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-8">
-                The smart security solution that catches intruders in the act
-                and immediately secures evidence straight to your mailbox.
+            <p id="hero-desc" class="text-slate-500 text-base md:text-xl leading-relaxed max-w-2xl mx-auto">
+                The smart security solution that catches intruders in the act and immediately secures evidence straight to your mailbox.
             </p>
-
-            <a href="https://play.google.com/store/apps/details?id=com.nbit.antitheft"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-blue-700 transition duration-200 cursor-pointer decoration-none">
-
-                Available on Google Play
-
-            </a>
-        </div>
-    </header>
-
-    <main class="max-w-5xl mx-auto px-6 py-16">
-
-        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">
-            Core Security Features
-        </h2>
-
-        <div class="grid md:grid-cols-3 gap-8">
-
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
-                <div class="text-4xl mb-4">🚨</div>
-
-                <h3 class="text-xl font-bold mb-2 text-slate-900">
-                    Siren Alarm
-                </h3>
-
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Triggers a high-volume customizable siren or your own
-                    recorded voice to alert surrounding people and deter thieves instantly.
-                </p>
+            
+            <div class="pt-2">
+                <a href="https://play.google.com/store/apps/details?id=com.nbit.antitheft"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-md shadow-blue-100">
+                    Available on Google Play →
+                </a>
             </div>
+        </header>
 
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
-                <div class="text-4xl mb-4">📸</div>
-
-                <h3 class="text-xl font-bold mb-2 text-slate-900">
-                    Intruder Snapshot
-                </h3>
-
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Silently captures front/rear camera photos at strategic intervals
-                    to secure clear images of the unauthorized user.
-                </p>
+        <!-- 핵심 보안 기능 섹션 -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                <span class="text-2xl">🔒</span>
+                <h2 id="title-features" class="text-2xl font-black tracking-tight text-slate-900 uppercase">Core Security Features</h2>
             </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
-                <div class="text-4xl mb-4">📹</div>
-
-                <h3 class="text-xl font-bold mb-2 text-slate-900">
-                    Surveillance Video
-                </h3>
-
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Records background ambient video and audio of the event,
-                    ensuring full situational evidence is logged safely.
-                </p>
-            </div>
-
-        </div>
-
-        <section class="mt-20 bg-slate-100 rounded-3xl p-8 md:p-12">
-
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">
-                How It Protects Your Data via Gmail API
-            </h2>
-
-            <p class="text-slate-700 leading-relaxed max-w-3xl mx-auto text-center mb-8">
-                Antitheft uses the secure, official Google Gmail API to bridge
-                the gap between your lost device and your personal safety.
-                When a theft event is triggered, the app compiles the captured
-                photos/videos and transmits them directly as an encrypted email
-                payload to your own inbox.
-            </p>
-
-            <div class="max-w-2xl mx-auto space-y-4">
-
-                <div class="bg-white p-4 rounded-xl shadow-xs border border-slate-200 flex items-start gap-4">
-                    <span class="text-blue-600 font-bold text-lg">1.</span>
-
-                    <p class="text-slate-600 text-sm">
-                        <strong class="text-slate-900">Direct Delivery:</strong>
-                        All evidence is sent using the
-                        <code class="bg-slate-100 text-red-600 px-1 py-0.5 rounded text-xs">
-                            gmail.send
-                        </code>
-                        scope directly to your personal authenticated email box.
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
+                        🚨
+                    </div>
+                    <h3 id="f1-title" class="text-xl font-bold text-slate-900">Siren Alarm</h3>
+                    <p id="f1-desc" class="text-slate-500 text-sm leading-relaxed">
+                        Triggers a high-volume customizable siren or your own recorded voice to alert surrounding people and deter thieves instantly.
                     </p>
                 </div>
 
-                <div class="bg-white p-4 rounded-xl shadow-xs border border-slate-200 flex items-start gap-4">
-                    <span class="text-blue-600 font-bold text-lg">2.</span>
-
-                    <p class="text-slate-600 text-sm">
-                        <strong class="text-slate-900">No Middleman:</strong>
-                        We do not deploy any external database or third-party servers.
-                        Your tokens and media never bypass our secure application architecture.
+                <!-- Feature 2 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
+                        📸
+                    </div>
+                    <h3 id="f2-title" class="text-xl font-bold text-slate-900">Intruder Snapshot</h3>
+                    <p id="f2-desc" class="text-slate-500 text-sm leading-relaxed">
+                        Silently captures front/rear camera photos at strategic intervals to secure clear images of the unauthorized user.
                     </p>
                 </div>
 
-                <div class="bg-white p-4 rounded-xl shadow-xs border border-slate-200 flex items-start gap-4">
-                    <span class="text-blue-600 font-bold text-lg">3.</span>
-
-                    <p class="text-slate-600 text-sm">
-                        <strong class="text-slate-900">Full Sovereignty:</strong>
-                        You maintain absolute control over the OAuth consent permissions
-                        inside your Android settings panel at any time.
+                <!-- Feature 3 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
+                        📹
+                    </div>
+                    <h3 id="f3-title" class="text-xl font-bold text-slate-900">Surveillance Video</h3>
+                    <p id="f3-desc" class="text-slate-500 text-sm leading-relaxed">
+                        Records background ambient video and audio of the event, ensuring full situational evidence is logged safely.
                     </p>
                 </div>
+            </div>
+        </section>
 
+        <!-- Gmail API 데이터 보호 상세 설명 섹션 -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                <span class="text-2xl">🛡️</span>
+                <h2 id="title-api" class="text-2xl font-black tracking-tight text-slate-900 uppercase">How It Protects Your Data via Gmail API</h2>
             </div>
 
-            <!-- IMPORTANT FOR GOOGLE OAUTH REVIEW -->
-            <div class="mt-10 text-center text-sm text-slate-600 leading-relaxed">
-
-                <p class="mb-3">
-                    Learn more about our
-                    <a href="./privacy-policy.html"
-                       class="text-blue-700 underline hover:text-blue-900">
-                        Privacy Policy
-                    </a>
-                    and
-                    <a href="./terms.html"
-                       class="text-blue-700 underline hover:text-blue-900">
-                        Terms of Service
-                    </a>.
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 max-w-3xl mx-auto p-8 md:p-12 space-y-8">
+                <p id="api-desc" class="text-slate-600 text-center leading-relaxed text-sm md:text-base">
+                    Antitheft uses the secure, official Google Gmail API to bridge the gap between your lost device and your personal safety. When a theft event is triggered, the app compiles the captured photos/videos and transmits them directly as an encrypted email payload to your own inbox.
                 </p>
 
-                <p>
-                    개인정보처리방침 및 서비스 이용약관은 아래 링크에서 확인하실 수 있습니다.
-                    <a href="./privacy-policy.html"
-                       class="text-blue-700 underline hover:text-blue-900">
-                        개인정보처리방침
-                    </a>
-                    /
-                    <a href="./terms.html"
-                       class="text-blue-700 underline hover:text-blue-900">
-                        이용약관
-                    </a>
-                </p>
+                <div class="space-y-4">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-start gap-4">
+                        <span class="text-blue-600 font-bold text-lg">1.</span>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            <strong id="api-point1-title" class="text-slate-900 block mb-0.5">Direct Delivery:</strong>
+                            <span id="api-point1-desc">All evidence is sent using the <code class="bg-slate-200/60 text-red-600 px-1 py-0.5 rounded text-xs font-mono">gmail.send</code> scope directly to your personal authenticated email box.</span>
+                        </p>
+                    </div>
 
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-start gap-4">
+                        <span class="text-blue-600 font-bold text-lg">2.</span>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            <strong id="api-point2-title" class="text-slate-900 block mb-0.5">No Middleman:</strong>
+                            <span id="api-point2-desc">We do not deploy any external database or third-party servers. Your tokens and media never bypass our secure application architecture.</span>
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-start gap-4">
+                        <span class="text-blue-600 font-bold text-lg">3.</span>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            <strong id="api-point3-title" class="text-slate-900 block mb-0.5">Full Sovereignty:</strong>
+                            <span id="api-point3-desc">You maintain absolute control over the OAuth consent permissions inside your Android settings panel at any time.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 법적 고지 및 주요 약관 섹션 -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                <span class="text-2xl">⚖️</span>
+                <h2 id="title-privacy" class="text-2xl font-black tracking-tight text-slate-900 uppercase">Privacy & Terms</h2>
             </div>
 
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 text-center max-w-2xl mx-auto p-10 space-y-6">
+                <p id="privacy-desc" class="text-slate-500 text-sm md:text-base leading-relaxed">
+                    We value your privacy. Antitheft is committed to protecting user data and providing a safe mobile environment. Read our legal documentation below.
+                </p>
+                
+                <!-- 언어 스위칭에 맞추어 href 및 텍스트가 동시에 교체되는 영역 -->
+                <div class="text-base font-semibold space-x-6 pt-6 border-t border-slate-100 flex justify-center">
+                    <a id="link-privacy-body" href="./privacy-policy.html" class="text-blue-600 underline hover:text-blue-800 transition-colors">Privacy Policy</a>
+                    <a id="link-terms-body" href="./terms.html" class="text-blue-600 underline hover:text-blue-800 transition-colors">Terms of Service</a>
+                </div>
+            </div>
         </section>
 
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6 text-center text-xs border-t border-slate-800">
-
-        <div class="max-w-4xl mx-auto space-y-5">
-
-            <p class="text-sm text-slate-300 font-medium">
-                &copy; 2026 Antitheft. All rights reserved.
+    <!-- 고급스러운 하단 푸터 -->
+    <footer class="bg-slate-900 text-slate-400 mt-24 py-12 px-6 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-5xl mx-auto space-y-4">
+            <div class="flex justify-center gap-6 text-sm text-slate-400 mb-2">
+                <a id="link-privacy-footer" href="./privacy-policy.html" class="hover:text-white transition-colors underline">Privacy Policy</a>
+                <a id="link-terms-footer" href="./terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="mailto:handykim17@gmail.com" class="hover:text-white transition-colors">Support</a>
+            </div>
+            <p id="footer-desc" class="text-slate-500 max-w-md mx-auto leading-relaxed">
+                This website is the official homepage of the Antitheft mobile application and provides information regarding app features, privacy practices, and terms of service.
             </p>
-
-            <!-- English Links -->
-            <div class="flex flex-wrap justify-center gap-6 text-sm">
-
-                <a href="./privacy-policy.html"
-                   class="hover:text-white transition duration-150 underline underline-offset-4">
-                    Privacy Policy
-                </a>
-
-                <a href="./terms.html"
-                   class="hover:text-white transition duration-150 underline underline-offset-4">
-                    Terms of Service
-                </a>
-
-                <a href="mailto:handykim17@gmail.com"
-                   class="hover:text-white transition duration-150 underline underline-offset-4">
-                    Support Contact
-                </a>
-
-            </div>
-
-            <!-- Korean Links -->
-            <div class="flex flex-wrap justify-center gap-6 text-sm pt-2 border-t border-slate-800">
-
-                <a href="./privacy-policy.html"
-                   class="hover:text-white transition duration-150 underline underline-offset-4">
-                    개인정보처리방침
-                </a>
-
-                <a href="./terms.html"
-                   class="hover:text-white transition duration-150 underline underline-offset-4">
-                    서비스 이용약관
-                </a>
-
-                <a href="mailto:handykim17@gmail.com"
-                   class="hover:text-white transition duration-150 underline underline-offset-4">
-                    고객지원
-                </a>
-
-            </div>
-
-            <div class="pt-4 space-y-2">
-
-                <p class="text-slate-500 leading-relaxed max-w-2xl mx-auto">
-                    This website is the official homepage of the Antitheft Android
-                    application and provides information regarding app features,
-                    privacy practices, and terms of service.
-                </p>
-
-                <p class="text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                    본 웹사이트는 Antitheft 안드로이드 애플리케이션의 공식 홈페이지이며,
-                    앱 기능, 개인정보처리방침 및 서비스 이용약관 정보를 제공합니다.
-                </p>
-
-            </div>
-
+            <p class="text-slate-600 font-medium">
+                &copy; 2026 nBit AppStudio. All rights reserved.
+            </p>
         </div>
-
     </footer>
+
+    <!-- 링크와 텍스트를 동시에 완벽 제어하는 다국어 엔진 스크립트 -->
+    <script>
+        const translations = {
+            en: {
+                heroDesc: "The smart security solution that catches intruders in the act and immediately secures evidence straight to your mailbox.",
+                titleFeatures: "Core Security Features",
+                f1Title: "Siren Alarm",
+                f1Desc: "Triggers a high-volume customizable siren or your own recorded voice to alert surrounding people and deter thieves instantly.",
+                f2Title: "Intruder Snapshot",
+                f2Desc: "Silently captures front/rear camera photos at strategic intervals to secure clear images of the unauthorized user.",
+                f3Title: "Surveillance Video",
+                f3Desc: "Records background ambient video and audio of the event, ensuring full situational evidence is logged safely.",
+                titleApi: "How It Protects Your Data via Gmail API",
+                apiDesc: "Antitheft uses the secure, official Google Gmail API to bridge the gap between your lost device and your personal safety. When a theft event is triggered, the app compiles the captured photos/videos and transmits them directly as an encrypted email payload to your own inbox.",
+                apiP1Title: "Direct Delivery:",
+                apiP1Desc: "All evidence is sent using the gmail.send scope directly to your personal authenticated email box.",
+                apiP2Title: "No Middleman:",
+                apiP2Desc: "We do not deploy any external database or third-party servers. Your tokens and media never bypass our secure application architecture.",
+                apiP3Title: "Full Sovereignty:",
+                apiP3Desc: "You maintain absolute control over the OAuth consent permissions inside your Android settings panel at any time.",
+                titlePrivacy: "Privacy & Terms",
+                privacyDesc: "We value your privacy. Antitheft is committed to protecting user data and providing a safe mobile environment. Read our legal documentation below.",
+                textPrivacy: "Privacy Policy",
+                textTerms: "Terms of Service",
+                footerDesc: "This website is the official homepage of the Antitheft mobile application and provides information regarding app features, privacy practices, and terms of service.",
+                urlPrivacy: "./privacy-policy.html",
+                urlTerms: "./terms.html"
+            },
+            ko: {
+                heroDesc: "디바이스에 접근하는 침입자를 실시간으로 탐지하고, 촬영된 사진 및 비디오 증거를 본인의 메일함으로 즉시 안전하게 전송하는 스마트 보안 솔루션입니다.",
+                titleFeatures: "핵심 보안 기능",
+                f1Title: "사이렌 알람",
+                f1Desc: "고음량의 커스텀 사이렌 들이나 미리 녹음해 둔 유저의 목소리를 송출하여 주변에 경고하고 도난을 즉각 방지합니다.",
+                f2Title: "침입자 스냅샷",
+                f2Desc: "지정된 간격에 따라 전/후면 카메라로 침입자의 사진을 무음으로 캡처하여 명확한 인상착의 증거를 확보합니다.",
+                f3Title: "주변 감시 비디오",
+                f3Desc: "이벤트 발생 당시의 백그라운드 주변 영상과 오디오를 동시에 녹화하여 상황적인 모든 증거를 안전하게 기록합니다.",
+                titleApi: "Gmail API를 통한 데이터 보호 방식",
+                apiDesc: "Antitheft는 분실된 기기와 유저의 안전을 연결하기 위해 Google의 공식 Gmail API를 안전하게 사용합니다. 도난 이벤트가 감지되면 앱이 캡처된 사진과 비디오를 취합하여 인증된 본인의 메일함으로 암호화된 이메일을 직접 전송합니다.",
+                apiP1Title: "직접적인 전송:",
+                apiP1Desc: "모든 증거 데이터는 오직 gmail.send 권한만을 이용해 유저가 인증한 개인 이메일 인박스로 곧바로 안전하게 전달됩니다.",
+                apiP2Title: "서버 중개 없음:",
+                apiP2Desc: "앱 스튜디오는 어떠한 외부 데이터베이스나 서드파티 서버도 운용하지 않습니다. 발급된 토큰과 미디어는 보안 앱 아키텍처 내부에서만 처리됩니다.",
+                apiP3Title: "완전한 통제권:",
+                apiP3Desc: "이용자는 안드로이드의 설정 패널을 통해 언제든지 Google OAuth 동의 및 접근 권한을 유연하게 관리하고 철회할 수 있습니다.",
+                titlePrivacy: "개인정보 보호 및 약관",
+                privacyDesc: "nBit AppStudio는 이용자의 데이터 보안을 최우선으로 생각하며, 철저한 법적 기준을 준수합니다. 아래 링크에서 세부 문서를 확인하세요.",
+                textPrivacy: "개인정보처리방침",
+                textTerms: "서비스 이용약관",
+                footerDesc: "본 웹사이트는 Antitheft 안드로이드 애플리케이션의 공식 홈페이지이며, 앱 기능, 개인정보처리방침 및 서비스 이용약관 정보를 제공합니다.",
+                urlPrivacy: "./privacy-policy-ko.html",
+                urlTerms: "./terms-ko.html"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            // 텍스트 변환 대상 요소 매핑
+            document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
+            document.getElementById('title-features').innerText = translations[lang].titleFeatures;
+            document.getElementById('title-api').innerText = translations[lang].titleApi;
+            document.getElementById('api-desc').innerText = translations[lang].apiDesc;
+            document.getElementById('title-privacy').innerText = translations[lang].titlePrivacy;
+            document.getElementById('privacy-desc').innerText = translations[lang].privacyDesc;
+            document.getElementById('footer-desc').innerText = translations[lang].footerDesc;
+
+            // 3단 피처 카드 내용 매핑
+            document.getElementById('f1-title').innerText = translations[lang].f1Title;
+            document.getElementById('f1-desc').innerText = translations[lang].f1Desc;
+            document.getElementById('f2-title').innerText = translations[lang].f2Title;
+            document.getElementById('f2-desc').innerText = translations[lang].f2Desc;
+            document.getElementById('f3-title').innerText = translations[lang].f3Title;
+            document.getElementById('f3-desc').innerText = translations[lang].f3Desc;
+
+            // Gmail API 포인트 텍스트 매핑
+            document.getElementById('api-point1-title').innerText = translations[lang].apiP1Title;
+            document.getElementById('api-point1-desc').innerHTML = translations[lang].apiP1Desc.replace('gmail.send', '<code class="bg-slate-200/60 text-red-600 px-1 py-0.5 rounded text-xs font-mono">gmail.send</code>');
+            document.getElementById('api-point2-title').innerText = translations[lang].apiP2Title;
+            document.getElementById('api-point2-desc').innerText = translations[lang].apiP2Desc;
+            document.getElementById('api-point3-title').innerText = translations[lang].apiP3Title;
+            document.getElementById('api-point3-desc').innerText = translations[lang].apiP3Desc;
+
+            // 본문 및 푸터 법적 문서 링크 경로 및 텍스트 교체
+            const pBody = document.getElementById('link-privacy-body');
+            const tBody = document.getElementById('link-terms-body');
+            const pFoot = document.getElementById('link-privacy-footer');
+            const tFoot = document.getElementById('link-terms-footer');
+
+            pBody.innerText = translations[lang].textPrivacy;
+            pBody.href = translations[lang].urlPrivacy;
+            
+            tBody.innerText = translations[lang].textTerms;
+            tBody.href = translations[lang].urlTerms;
+
+            pFoot.innerText = translations[lang].textPrivacy;
+            pFoot.href = translations[lang].urlPrivacy;
+
+            tFoot.innerText = translations[lang].textTerms;
+            tFoot.href = translations[lang].urlTerms;
+
+            // 토글 버튼 클래스 활성화 인디케이터 처리
+            const btnEn = document.getElementById('btn-en');
+            const btnKo = document.getElementById('btn-ko');
+
+            if (lang === 'en') {
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm";
+                btnKo.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900";
+            } else {
+                btnKo.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm";
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900";
+            }
+        }
+    </script>
 
 </body>
 </html>
