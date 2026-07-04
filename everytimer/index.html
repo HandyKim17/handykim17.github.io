@@ -4,154 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EveryTimer - Official Website</title>
-
     <!-- Tailwind CSS v4 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <style>
-        /* EveryTimer의 스마트하고 깔끔한 생산성 테마를 반영한 그라디언트 */
-        .gradient-bg {
-            background: linear-gradient(135deg, #059669 0%, #064e3b 100%);
-        }
-    </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- 상단 헤더 섹션 -->
-    <header class="gradient-bg text-white py-20 px-6 text-center shadow-lg">
-        <div class="max-w-4xl mx-auto">
+    <!-- 상단 글로벌 네비게이션 바 -->
+    <nav class="max-w-6xl w-full mx-auto px-6 py-6 flex flex-col sm:flex-row gap-4 justify-between items-center">
+        <!-- 첫 페이지로 이동하는 홈버튼 링크 -->
+        <a href="../" class="flex items-center gap-2 group cursor-pointer decoration-none">
+            <span class="text-2xl transition-transform group-hover:scale-110">⚡</span>
+            <span class="font-black text-xl tracking-tight text-slate-900 group-hover:text-emerald-600 transition-colors">nBit AppStudio</span>
+        </a>
+        
+        <!-- [우측 상단] 실시간 언어 전환 탭 토글 버튼 -->
+        <div class="flex items-center bg-slate-200/60 p-1 rounded-xl text-xs font-semibold backdrop-blur-md">
+            <button id="btn-en" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm">
+                English
+            </button>
+            <button id="btn-ko" onclick="setLanguage('ko')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900">
+                한국어
+            </button>
+        </div>
+    </nav>
 
-            <div class="text-5xl mb-4">⏱️</div>
-
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-6 py-12 space-y-20">
+        
+        <!-- 히어로 섹션 (Hero Section) -->
+        <header class="text-center space-y-6 max-w-3xl mx-auto pt-4">
+            <div class="inline-block relative">
+                <!-- assets 폴더 안의 실제 이미지 아이콘 적용 -->
+                <img src="../assets/everytimer_icon.png" alt="EveryTimer Icon" class="w-24 h-24 rounded-3xl object-cover shadow-xl border border-slate-100 mx-auto">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
                 EveryTimer
             </h1>
-
-            <p class="text-lg md:text-xl text-emerald-200 max-w-2xl mx-auto mb-8">
-                The ultimate interval and multi-timer solution designed to seamlessly 
-                manage all your routines, workouts, and time-tracking needs.
+            <p id="hero-desc" class="text-slate-500 text-base md:text-xl leading-relaxed max-w-2xl mx-auto">
+                The ultimate interval and multi-timer solution designed to seamlessly manage all your routines, workouts, and time-tracking needs.
             </p>
+            
+            <div class="pt-2">
+                <a href="https://play.google.com/store/apps/details?id=com.nbit.everytimer"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-md shadow-emerald-100">
+                    Available on Google Play →
+                </a>
+            </div>
+        </header>
 
-            <!-- 스토어 링크 -->
-            <a href="https://play.google.com/store/apps/details?id=com.nbit.everytimer"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="inline-block bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-emerald-500 transition duration-200 cursor-pointer decoration-none">
-                Available on Google Play
-            </a>
-        </div>
-    </header>
+        <!-- 핵심 기능 섹션 -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                <span class="text-2xl">⏱️</span>
+                <h2 id="title-features" class="text-2xl font-black tracking-tight text-slate-900 uppercase">Core Features</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
+                        🔄
+                    </div>
+                    <h3 id="f1-title" class="text-xl font-bold text-slate-900">Custom Intervals</h3>
+                    <p id="f1-desc" class="text-slate-500 text-sm leading-relaxed">
+                        Easily configure preparation, work, and rest periods for fitness, study routines, or repetitive tasks.
+                    </p>
+                </div>
 
-    <!-- 메인 콘텐츠 섹션 -->
-    <main class="max-w-5xl mx-auto px-6 py-16">
+                <!-- Feature 2 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
+                        🔔
+                    </div>
+                    <h3 id="f2-title" class="text-xl font-bold text-slate-900">Smart Alerts</h3>
+                    <p id="f2-desc" class="text-slate-500 text-sm leading-relaxed">
+                        Stay on track with customizable audio cues and background notifications that run smoothly anytime.
+                    </p>
+                </div>
 
-        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">
-            Core Features
-        </h2>
+                <!-- Feature 3 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
+                        ⚡
+                    </div>
+                    <h3 id="f3-title" class="text-xl font-bold text-slate-900">Sleek Efficiency</h3>
+                    <p id="f3-desc" class="text-slate-500 text-sm leading-relaxed">
+                        A minimalist, ad-optimized interface structured for rapid setup without complex clutter.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-        <!-- 3단 기능/특징 그리드 -->
-        <div class="grid md:grid-cols-3 gap-8">
-
-            <!-- Feature 1 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
-                <div class="text-4xl mb-4">🔄</div>
-                <h3 class="text-xl font-bold mb-2 text-slate-900">
-                    Custom Intervals
-                </h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Easily configure preparation, work, and rest periods for fitness, study routines, or repetitive tasks.
-                </p>
+        <!-- 법적 고지 및 약관 섹션 -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                <span class="text-2xl">⚖️</span>
+                <h2 id="title-privacy" class="text-2xl font-black tracking-tight text-slate-900 uppercase">Privacy & Terms</h2>
             </div>
 
-            <!-- Feature 2 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
-                <div class="text-4xl mb-4">🔔</div>
-                <h3 class="text-xl font-bold mb-2 text-slate-900">
-                    Smart Alerts
-                </h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Stay on track with customizable audio cues and background notifications that run smoothly anytime.
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 text-center max-w-2xl mx-auto space-y-6">
+                <p id="privacy-desc" class="text-slate-500 text-sm md:text-base leading-relaxed">
+                    We value your privacy. EveryTimer is committed to protecting user data and providing a reliable utility environment. Read our legal documentation below.
                 </p>
+                
+                <div class="text-sm space-y-3 pt-4 border-t border-slate-100">
+                    <p>
+                        Learn more about our
+                        <a href="./privacy-policy.html" class="text-emerald-600 font-semibold underline hover:text-emerald-800 transition-colors">Privacy Policy</a>
+                        and
+                        <a href="./terms.html" class="text-emerald-600 font-semibold underline hover:text-emerald-800 transition-colors">Terms of Service</a>.
+                    </p>
+                    <p class="text-slate-400 font-light text-xs">
+                        개인정보처리방침 및 서비스 이용약관은 아래 링크에서 확인하실 수 있습니다.<br>
+                        <a href="./privacy-policy.html" class="text-emerald-600 font-semibold underline hover:text-emerald-800 transition-colors">개인정보처리방침</a>
+                        /
+                        <a href="./terms.html" class="text-emerald-600 font-semibold underline hover:text-emerald-800 transition-colors">이용약관</a>
+                    </p>
+                </div>
             </div>
-
-            <!-- Feature 3 -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
-                <div class="text-4xl mb-4">⚡</div>
-                <h3 class="text-xl font-bold mb-2 text-slate-900">
-                    Sleek Efficiency
-                </h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    A minimalist, ad-optimized interface structured for rapid setup without complex clutter.
-                </p>
-            </div>
-
-        </div>
-
-        <!-- 중간 안내 및 주요 링크 섹션 -->
-        <section class="mt-20 bg-slate-100 rounded-3xl p-8 md:p-12 text-center">
-
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-                Privacy & Terms
-            </h2>
-
-            <p class="text-slate-700 leading-relaxed max-w-2xl mx-auto mb-8 text-sm md:text-base">
-                We value your privacy. EveryTimer is committed to protecting user data and providing a reliable utility environment. Read our legal documentation below.
-            </p>
-
-            <div class="text-sm text-slate-600 space-y-3">
-                <p>
-                    Learn more about our
-                    <a href="./privacy-policy.html" class="text-emerald-700 font-medium underline hover:text-emerald-900">Privacy Policy</a>
-                    and
-                    <a href="./terms.html" class="text-emerald-700 font-medium underline hover:text-emerald-900">Terms of Service</a>.
-                </p>
-
-                <p class="pt-2 border-t border-slate-200 max-w-md mx-auto">
-                    개인정보처리방침 및 서비스 이용약관은 아래 링크에서 확인하실 수 있습니다.<br class="hidden sm:inline">
-                    <a href="./privacy-policy.html" class="text-emerald-700 font-medium underline hover:text-emerald-900">개인정보처리방침</a>
-                    /
-                    <a href="./terms.html" class="text-emerald-700 font-medium underline hover:text-emerald-900">이용약관</a>
-                </p>
-            </div>
-
         </section>
 
     </main>
 
-    <!-- 푸터 섹션 -->
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6 text-center text-xs border-t border-slate-800">
-        <div class="max-w-4xl mx-auto space-y-5">
-
-            <p class="text-sm text-slate-300 font-medium">
-                &copy; 2026 EveryTimer. All rights reserved.
+    <!-- 고급스러운 하단 푸터 -->
+    <footer class="bg-slate-900 text-slate-400 mt-24 py-12 px-6 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-5xl mx-auto space-y-4">
+            <div class="flex justify-center gap-6 text-sm text-slate-400 mb-2">
+                <a href="./privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy (개인정보처리방침)</a>
+                <a href="./terms.html" class="hover:text-white transition-colors">Terms of Service (이용약관)</a>
+                <a href="mailto:handykim17@gmail.com" class="hover:text-white transition-colors">Support (고객지원)</a>
+            </div>
+            <p class="text-slate-500 max-w-md mx-auto leading-relaxed">
+                This website is the official homepage of the EveryTimer mobile application and provides information regarding app features, privacy practices, and terms of service.
             </p>
-
-            <!-- English Links -->
-            <div class="flex flex-wrap justify-center gap-6 text-sm">
-                <a href="./privacy-policy.html" class="hover:text-white transition duration-150 underline underline-offset-4">Privacy Policy</a>
-                <a href="./terms.html" class="hover:text-white transition duration-150 underline underline-offset-4">Terms of Service</a>
-                <a href="mailto:handykim17@gmail.com" class="hover:text-white transition duration-150 underline underline-offset-4">Support Contact</a>
-            </div>
-
-            <!-- Korean Links -->
-            <div class="flex flex-wrap justify-center gap-6 text-sm pt-2 border-t border-slate-800">
-                <a href="./privacy-policy.html" class="hover:text-white transition duration-150 underline underline-offset-4">개인정보처리방침</a>
-                <a href="./terms.html" class="hover:text-white transition duration-150 underline underline-offset-4">서비스 이용약관</a>
-                <a href="mailto:handykim17@gmail.com" class="hover:text-white transition duration-150 underline underline-offset-4">고객지원</a>
-            </div>
-
-            <div class="pt-4 space-y-2">
-                <p class="text-slate-500 leading-relaxed max-w-2xl mx-auto">
-                    This website is the official homepage of the EveryTimer mobile application and provides information regarding app features, privacy practices, and terms of service.
-                </p>
-                <p class="text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                    본 웹사이트는 EveryTimer 모바일 애플리케이션의 공식 홈페이지이며, 앱 기능, 개인정보처리방침 및 서비스 이용약관 정보를 제공합니다.
-                </p>
-            </div>
-
+            <p class="text-slate-600 font-medium">
+                &copy; 2026 nBit AppStudio. All rights reserved.
+            </p>
         </div>
     </footer>
+
+    <!-- 실시간 번역 전환 처리 스크립트 -->
+    <script>
+        const translations = {
+            en: {
+                heroDesc: "The ultimate interval and multi-timer solution designed to seamlessly manage all your routines, workouts, and time-tracking needs.",
+                titleFeatures: "Core Features",
+                f1Title: "Custom Intervals",
+                f1Desc: "Easily configure preparation, work, and rest periods for fitness, study routines, or repetitive tasks.",
+                f2Title: "Smart Alerts",
+                f2Desc: "Stay on track with customizable audio cues and background notifications that run smoothly anytime.",
+                f3Title: "Sleek Efficiency",
+                f3Desc: "A minimalist, ad-optimized interface structured for rapid setup without complex clutter.",
+                titlePrivacy: "Privacy & Terms",
+                privacyDesc: "We value your privacy. EveryTimer is committed to protecting user data and providing a reliable utility environment. Read our legal documentation below."
+            },
+            ko: {
+                heroDesc: "운동, 학습, 작업 관리 등 모든 일상 루틴을 유연하게 설정하고 관리할 수 있도록 설계된 고성능 고효율 멀티 인터벌 타이머 패키지입니다.",
+                titleFeatures: "핵심 앱 기능",
+                f1Title: "맞춤형 인터벌 설정",
+                f1Desc: "준비, 운동, 휴식 시간을 자유롭게 커스텀하여 피트니스, 루틴 학습, 반복 업무 등에 최적화해 보세요.",
+                f2Title: "스마트 알림 시스템",
+                f2Desc: "백그라운드 상태에서도 정밀하게 작동하는 오디오 큐와 직관적인 알림 알람을 통해 계획을 유지하세요.",
+                f3Title: "정돈된 고효율 UI",
+                f3Desc: "복잡한 요소를 배제한 미니멀리즘 인터페이스와 쾌적한 아키텍처 구조로 빠른 설정을 보장합니다.",
+                titlePrivacy: "개인정보 보호 및 약관",
+                privacyDesc: "nBit AppStudio는 이용자의 개인정보를 소중히 다루며, 보다 안정적이고 신뢰할 수 있는 앱 환경을 제공하기 위해 최선을 다합니다."
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            // 텍스트 매핑 노드 교체
+            document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
+            document.getElementById('title-features').innerText = translations[lang].titleFeatures;
+            document.getElementById('title-privacy').innerText = translations[lang].titlePrivacy;
+            document.getElementById('privacy-desc').innerText = translations[lang].privacyDesc;
+
+            // 피처 정보 갱신
+            document.getElementById('f1-title').innerText = translations[lang].f1Title;
+            document.getElementById('f1-desc').innerText = translations[lang].f1Desc;
+            document.getElementById('f2-title').innerText = translations[lang].f2Title;
+            document.getElementById('f2-desc').innerText = translations[lang].f2Desc;
+            document.getElementById('f3-title').innerText = translations[lang].f3Title;
+            document.getElementById('f3-desc').innerText = translations[lang].f3Desc;
+
+            // 토글 버튼 클래스 액티브 처리
+            const btnEn = document.getElementById('btn-en');
+            const btnKo = document.getElementById('btn-ko');
+
+            if (lang === 'en') {
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm";
+                btnKo.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900";
+            } else {
+                btnKo.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm";
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer text-slate-500 hover:text-slate-900";
+            }
+        }
+    </script>
 
 </body>
 </html>
