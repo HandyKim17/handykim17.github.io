@@ -111,6 +111,7 @@
                 </p>
                 
                 <div class="text-base font-semibold space-x-6 pt-6 border-t border-slate-100 flex justify-center">
+                    <!-- URL 경로는 고정하고 출력 텍스트만 스크립트가 치환합니다 -->
                     <a id="link-privacy-body" href="./privacy-policy.html" class="text-orange-600 underline hover:text-orange-800 transition-colors">Privacy Policy</a>
                     <a id="link-terms-body" href="./terms.html" class="text-orange-600 underline hover:text-orange-800 transition-colors">Terms of Service</a>
                 </div>
@@ -152,9 +153,7 @@
                 privacyDesc: "We value your privacy. MemberBook is committed to protecting user data and providing a safe mobile environment. Read our legal documentation below.",
                 textPrivacy: "Privacy Policy",
                 textTerms: "Terms of Service",
-                footerDesc: "This website is the official homepage of the MemberBook mobile application and provides information regarding app features, privacy practices, and terms of service.",
-                urlPrivacy: "./privacy-policy.html",
-                urlTerms: "./terms.html"
+                footerDesc: "This website is the official homepage of the MemberBook mobile application and provides information regarding app features, privacy practices, and terms of service."
             },
             ko: {
                 heroDesc: "단체의 회원 명부 관리, 정밀한 출석 체크 및 강력한 클라우드 스프레드시트 툴 연동 시스템을 통해 조직을 완벽히 조율하는 효율적인 관리자 프레임워크입니다.",
@@ -169,9 +168,7 @@
                 privacyDesc: "nBit AppStudio는 단체와 구성원의 개인정보를 강력하게 보호하며, 외부로 유출되지 않는 투명한 아키텍처 환경을 약속합니다.",
                 textPrivacy: "개인정보처리방침",
                 textTerms: "서비스 이용약관",
-                footerDesc: "본 웹사이트는 MemberBook 모바일 애플리케이션의 공식 홈페이지이며, 앱 기능, 개인정보처리방침 및 서비스 이용약관 정보를 제공합니다.",
-                urlPrivacy: "./privacy-policy-ko.html",
-                urlTerms: "./terms-ko.html"
+                footerDesc: "본 웹사이트는 MemberBook 모바일 애플리케이션의 공식 홈페이지이며, 앱 기능, 개인정보처리방침 및 서비스 이용약관 정보를 제공합니다."
             }
         };
 
@@ -191,20 +188,16 @@
             document.getElementById('f3-title').innerText = translations[lang].f3Title;
             document.getElementById('f3-desc').innerText = translations[lang].f3Desc;
 
+            // URL 주소는 변경 없이, 화면에 노출되는 링크 글자만 매핑 교체
             const pBody = document.getElementById('link-privacy-body');
             const tBody = document.getElementById('link-terms-body');
             const pFoot = document.getElementById('link-privacy-footer');
             const tFoot = document.getElementById('link-terms-footer');
 
             pBody.innerText = translations[lang].textPrivacy;
-            pBody.href = translations[lang].urlPrivacy;
             tBody.innerText = translations[lang].textTerms;
-            tBody.href = translations[lang].urlTerms;
-
             pFoot.innerText = translations[lang].textPrivacy;
-            pFoot.href = translations[lang].urlPrivacy;
             tFoot.innerText = translations[lang].textTerms;
-            tFoot.href = translations[lang].urlTerms;
 
             const btnEn = document.getElementById('btn-en');
             const btnKo = document.getElementById('btn-ko');
