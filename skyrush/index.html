@@ -4,21 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkyRush - Official Website</title>
-    <!-- Tailwind CSS v4 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- 상단 글로벌 네비게이션 바 -->
     <nav class="max-w-6xl w-full mx-auto px-6 py-6 flex flex-col sm:flex-row gap-4 justify-between items-center">
-        <!-- 메인 첫 페이지로 이동하는 홈버튼 링크 링크 추가 -->
         <a href="../" class="flex items-center gap-2 group cursor-pointer decoration-none">
             <span class="text-2xl transition-transform group-hover:scale-110">⚡</span>
             <span class="font-black text-xl tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">nBit AppStudio</span>
         </a>
         
-        <!-- [우측 상단] 실시간 언어 전환 탭 토글 버튼 -->
         <div class="flex items-center bg-slate-200/60 p-1 rounded-xl text-xs font-semibold backdrop-blur-md">
             <button id="btn-en" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm">
                 English
@@ -29,13 +25,10 @@
         </div>
     </nav>
 
-    <!-- 메인 콘텐츠 영역 -->
     <main class="flex-grow max-w-5xl w-full mx-auto px-6 py-12 space-y-20">
         
-        <!-- 히어로 섹션 (Hero Section) -->
         <header class="text-center space-y-6 max-w-3xl mx-auto pt-4">
             <div class="inline-block relative">
-                <!-- assets 폴더 경로 내 오타 수정 -->
                 <img src="../assets/skyrush_icon.png" alt="SkyRush Icon" class="w-24 h-24 rounded-3xl object-cover shadow-xl border border-slate-100 mx-auto">
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
@@ -55,7 +48,6 @@
             </div>
         </header>
 
-        <!-- 핵심 게임 피처 섹션 -->
         <section class="space-y-6">
             <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
                 <span class="text-2xl">🎮</span>
@@ -63,7 +55,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
                 <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
                     <div class="w-12 h-12 bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
                         🧊
@@ -74,7 +65,6 @@
                     </p>
                 </div>
 
-                <!-- Feature 2 -->
                 <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
                     <div class="w-12 h-12 bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
                         🌍
@@ -85,7 +75,6 @@
                     </p>
                 </div>
 
-                <!-- Feature 3 -->
                 <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 space-y-4">
                     <div class="w-12 h-12 bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl font-bold rounded-2xl shadow-inner">
                         ⚡
@@ -98,40 +87,34 @@
             </div>
         </section>
 
-        <!-- 법적 고지 및 주요 링크 안내단 -->
         <section class="space-y-6">
             <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
                 <span class="text-2xl">⚖️</span>
                 <h2 id="title-privacy" class="text-2xl font-black tracking-tight text-slate-900 uppercase">Privacy & Terms</h2>
             </div>
 
-            <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 text-center max-w-2xl mx-auto space-y-6">
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 text-center max-w-2xl mx-auto p-10 space-y-6">
                 <p id="privacy-desc" class="text-slate-500 text-sm md:text-base leading-relaxed">
                     We value your privacy. SkyRush is committed to protecting player data and providing a safe gaming environment. Read our legal documentation below.
                 </p>
                 
-                <div class="text-sm space-y-3 pt-4 border-t border-slate-100">
-                    <p>
-                        Learn more about our
-                        <a href="./privacy-policy.html" class="text-indigo-600 font-semibold underline hover:text-indigo-800 transition-colors">Privacy Policy</a>
-                        and
-                        <a href="./terms.html" class="text-indigo-600 font-semibold underline hover:text-indigo-800 transition-colors">Terms of Service</a>.
-                    </p>
+                <div class="text-base font-semibold space-x-6 pt-6 border-t border-slate-100 flex justify-center">
+                    <a id="link-privacy-body" href="./privacy-policy.html" class="text-indigo-600 underline hover:text-indigo-800 transition-colors">Privacy Policy</a>
+                    <a id="link-terms-body" href="./terms.html" class="text-indigo-600 underline hover:text-indigo-800 transition-colors">Terms of Service</a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- 고급스러운 하단 푸터 -->
     <footer class="bg-slate-900 text-slate-400 mt-24 py-12 px-6 border-t border-slate-800 text-center text-xs">
         <div class="max-w-5xl mx-auto space-y-4">
             <div class="flex justify-center gap-6 text-sm text-slate-400 mb-2">
-                <a href="./privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy (개인정보처리방침)</a>
-                <a href="./terms.html" class="hover:text-white transition-colors">Terms of Service (이용약관)</a>
-                <a href="mailto:handykim17@gmail.com" class="hover:text-white transition-colors">Support (고객지원)</a>
+                <a id="link-privacy-footer" href="./privacy-policy.html" class="hover:text-white transition-colors underline">Privacy Policy</a>
+                <a id="link-terms-footer" href="./terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="mailto:handykim17@gmail.com" class="hover:text-white transition-colors">Support</a>
             </div>
-            <p class="text-slate-500 max-w-md mx-auto leading-relaxed">
+            <p id="footer-desc" class="text-slate-500 max-w-md mx-auto leading-relaxed">
                 This website is the official homepage of the SkyRush mobile application and provides information regarding game features, privacy practices, and terms of service.
             </p>
             <p class="text-slate-600 font-medium">
@@ -140,7 +123,6 @@
         </div>
     </footer>
 
-    <!-- 실시간 번역 전환 처리 스크립트 -->
     <script>
         const translations = {
             en: {
@@ -153,7 +135,10 @@
                 f3Title: "Pure Performance",
                 f3Desc: "Lightweight architecture ensuring high framerates and battery-friendly optimization on all devices.",
                 titlePrivacy: "Privacy & Terms",
-                privacyDesc: "We value your privacy. SkyRush is committed to protecting player data and providing a safe gaming environment. Read our legal documentation below."
+                privacyDesc: "We value your privacy. SkyRush is committed to protecting player data and providing a safe gaming environment. Read our legal documentation below.",
+                textPrivacy: "Privacy Policy",
+                textTerms: "Terms of Service",
+                footerDesc: "This website is the official homepage of the SkyRush mobile application and provides information regarding game features, privacy practices, and terms of service."
             },
             ko: {
                 heroDesc: "역동적인 환경 속에서 장애물을 돌파하는 용감한 북극곰의 이야기를 담은 2D 모바일 액션 게임입니다.",
@@ -165,20 +150,24 @@
                 f3Title: "완벽한 최적화",
                 f3Desc: "가벼운 아키텍처 설계를 적용하여 기기 발열과 배터리 소모를 줄이고 높은 프레임레이트를 보장합니다.",
                 titlePrivacy: "개인정보 보호 및 약관",
-                privacyDesc: "nBit AppStudio는 플레이어의 개인정보를 매우 소중하게 생각하며, 안전한 게임 환경을 제공하기 위해 최선을 다하고 있습니다."
+                privacyDesc: "nBit AppStudio는 플레이어의 개인정보를 매우 소중하게 생각하며, 안전한 게임 환경을 제공하기 위해 최선을 다하고 있습니다.",
+                textPrivacy: "개인정보처리방침",
+                textTerms: "서비스 이용약관",
+                footerDesc: "본 웹사이트는 SkyRush 모바일 애플리케이션의 공식 홈페이지이며, 게임 기능, 개인정보처리방침 및 서비스 이용약관 정보를 제공합니다."
             }
         };
 
         function setLanguage(lang) {
             document.documentElement.lang = lang;
 
-            // 텍스트 변환 대상 요소 매핑
+            // 일반 텍스트 변경
             document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
             document.getElementById('title-features').innerText = translations[lang].titleFeatures;
             document.getElementById('title-privacy').innerText = translations[lang].titlePrivacy;
             document.getElementById('privacy-desc').innerText = translations[lang].privacyDesc;
+            document.getElementById('footer-desc').innerText = translations[lang].footerDesc;
 
-            // 카드 정보 노드 갱신
+            // 카드 컴포넌트 정보 변경
             document.getElementById('f1-title').innerText = translations[lang].f1Title;
             document.getElementById('f1-desc').innerText = translations[lang].f1Desc;
             document.getElementById('f2-title').innerText = translations[lang].f2Title;
@@ -186,7 +175,18 @@
             document.getElementById('f3-title').innerText = translations[lang].f3Title;
             document.getElementById('f3-desc').innerText = translations[lang].f3Desc;
 
-            // 스위칭 탭 스타일 토글 활성화
+            // 본문 및 푸터 법적 문서 링크 글자 실시간 교체
+            const pBody = document.getElementById('link-privacy-body');
+            const tBody = document.getElementById('link-terms-body');
+            const pFoot = document.getElementById('link-privacy-footer');
+            const tFoot = document.getElementById('link-terms-footer');
+
+            pBody.innerText = translations[lang].textPrivacy;
+            tBody.innerText = translations[lang].textTerms;
+            pFoot.innerText = translations[lang].textPrivacy;
+            tFoot.innerText = translations[lang].textTerms;
+
+            // 토글 버튼 클래스 액티브 효과 처리
             const btnEn = document.getElementById('btn-en');
             const btnKo = document.getElementById('btn-ko');
 
