@@ -8,46 +8,132 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased py-12 px-6">
 
-    <div class="max-w-3xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100 space-y-6">
+    <div class="max-w-3xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100 space-y-12">
         
-        <div class="border-b border-slate-100 pb-6">
-            <a href="./index.html" class="text-orange-600 font-semibold hover:text-orange-800 text-sm mb-2 inline-block">← Back to Official Website</a>
-            <h1 class="text-3xl font-black text-slate-900 tracking-tight">Privacy Policy</h1>
-            <p class="text-slate-400 text-xs mt-1">Last updated: July 2026</p>
+        <div class="space-y-6">
+            <div class="border-b border-slate-100 pb-6">
+                <a href="./index.html" class="text-orange-600 font-semibold hover:text-orange-800 text-sm mb-2 inline-block">← Back to Official Website</a>
+                <h1 class="text-3xl font-black text-slate-900 tracking-tight">Privacy Policy</h1>
+                <p class="text-slate-400 text-xs mt-1">Last updated: July 2026</p>
+            </div>
+
+            <p class="text-sm leading-relaxed text-slate-600">
+                nBit AppStudio ("we", "our", or "us") operates the <strong>MemberBook</strong> mobile application (the "Service"). This Privacy Policy is designed to inform you regarding our rules and data collection practices when utilizing our services, in compliance with applicable privacy regulations and app store standards.
+            </p>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900">1. Information Collection and Use</h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    To provide and improve our Service, we collect and process the following information:
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-600 pl-2 space-y-1">
+                    <li><strong>Account Information:</strong> When you log in via Google Sign-In, we receive your Google account details, including your name, email address, profile image URL, and unique user identifier (UID), to authenticate and identify you within the Service.</li>
+                    <li><strong>User-Generated Data:</strong> To enable the workspace and meeting management features, the Service processes the roster data you directly input (such as names, contact numbers, addresses, birthdays, and attendance logs) along with financial ledger entries and collaborator lists.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900">2. Data Infrastructure and Cloud Third-Party Integration</h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    MemberBook utilizes secure cloud-based infrastructures to offer real-time data synchronization and shared workspace features:
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-600 pl-2 space-y-1">
+                    <li><strong>Cloud Processing Backend:</strong> All workspace inputs, roster details, and logs are securely transmitted to and synchronized with <strong>Google Cloud’s Firebase backend servers</strong> (Firebase Authentication and Cloud Firestore).</li>
+                    <li><strong>Collaborator Workspaces:</strong> If you invite other users via our Collaboration feature, the associated workspace information will be securely accessed and modified based on the permissions you grant.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900">3. Data Retention and Deletion (Account Closure)</h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    Your personal data and operational entries will be securely maintained for as long as you maintain an active account with the Service. Users hold the absolute right to clear their digital footprint at any time. By navigating to <span class="bg-slate-100 px-1 rounded font-semibold text-slate-700">[Settings > Account Deletion]</span> within the app, you can request permanent deletion. Upon this action, all account bindings, related workspaces, and underlying database structures on our Firestore cloud will be immediately and irreversibly destroyed.
+                </p>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900">4. Data Security</h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    The security of your tracking data is vital to us. We implement industry-accepted security frameworks to protect your records:
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-600 pl-2 space-y-1">
+                    <li><strong>Transit and Storage Encryption:</strong> Data is securely transmitted over HTTPS (TLS) protocols and encrypted automatically using AES-256 (Encryption at Rest) when stored on Google servers.</li>
+                    <li><strong>Access Controls:</strong> We deploy strict Firebase Security Rules to block unauthorized third-party malicious inquiries and ensure only validated account credentials can access their specific workspace fields.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900">5. Contact Us</h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    If you hold further inquiries regarding this Privacy Policy document or need assistance with data deletion, feel free to submit communications to our support gateway: 
+                    <a href="mailto:nbit.handykim@gmail.com" class="text-orange-600 underline">nbit.handykim@gmail.com</a>.
+                </p>
+            </section>
         </div>
 
-        <p class="text-sm leading-relaxed text-slate-600">
-            nBit AppStudio ("we", "our", or "us") operates the <strong>MemberBook</strong> mobile application. This Privacy Policy is designed to inform you regarding our rules and structural data collection practices when utilizing our services.
-        </p>
+        <div class="border-t border-dashed border-slate-200 my-12"></div>
 
-        <section class="space-y-2">
-            <h2 class="text-lg font-bold text-slate-900">1. Information Collection and Use</h2>
-            <p class="text-sm leading-relaxed text-slate-600">
-                MemberBook structures data independently inside your direct local environment. We do not transmit organizational entries, attendance logs, or user rosters to third-party data clouds or central databases operated by us.
-            </p>
-        </section>
+        <div class="space-y-6">
+            <div class="border-b border-slate-100 pb-6">
+                <h1 class="text-3xl font-black text-slate-900 tracking-tight">개인정보처리방침</h1>
+                <p class="text-slate-400 text-xs mt-1">최종 수정일: 2026년 7월</p>
+            </div>
 
-        <section class="space-y-2">
-            <h2 class="text-lg font-bold text-slate-900">2. Google Integration Services</h2>
             <p class="text-sm leading-relaxed text-slate-600">
-                When connecting to external parameters via Google Apps Script and Google Sheets APIs, your authorization tokens and directory matrices interact exclusively using official secure pipelines. These connection sequences bypass middleman servers entirely, safeguarding architectural privacy.
+                nBit AppStudio(이하 '회사')는 「개인정보 보호법」 제30조 및 관계 법령에 따라 사용자의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보처리방침을 수립·공개합니다.
             </p>
-        </section>
 
-        <section class="space-y-2">
-            <h2 class="text-lg font-bold text-slate-900">3. Security of Data</h2>
-            <p class="text-sm leading-relaxed text-slate-600">
-                The security of your organizational tracking data is vital to us. However, remember that no method of mobile background operation or electronic wireless synchronization is 100% secure. We implement industry-accepted frameworks to shield roster inputs.
-            </p>
-        </section>
+            <section class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900">1. 개인정보의 처리 목적 및 항목</h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    회사는 다음의 목적을 위해 필요한 최소한의 개인정보를 처리합니다. 처리된 개인정보는 목적 이외의 용도로 사용되지 않으며, 이용 목적이 변경되는 경우 사전 동의를 구할 예정입니다.
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-600 pl-2 space-y-1">
+                    <li><strong>회원 가입 및 관리:</strong> 구글 연동 로그인(Google Sign-In)을 통한 사용자 식별, 본인 확인, 서비스 부정 이용 방지, 회원 탈퇴 처리 (수집 항목: 구글 계정의 이름, 이메일 주소, 프로필 이미지 URL, 고유 UID)</li>
+                    <li><strong>서비스 제공 및 데이터 동기화:</strong> 워크스페이스 생성 및 관리, 모임 출석 기록 관리, 커스텀 회원 데이터 저장, 장부 및 회비 관리, 공동 작업자 초대 기능 제공 (수집 항목: 사용자가 직접 앱에 등록한 회원 정보인 이름, 연락처, 주소, 생일 등 및 공동 작업자 이메일 목록)</li>
+                </ul>
+            </section>
 
-        <section class="space-y-2">
-            <h2 class="text-lg font-bold text-slate-900">4. Contact Us</h2>
-            <p class="text-sm leading-relaxed text-slate-600">
-                If you hold further inquiries regarding this Privacy Policy document, feel free to submit communications to our support gateway: 
-                <a href="mailto:nbit.handykim@gmail.com" class="text-orange-600 underline">nbit.handykim@gmail.com</a>.
-            </p>
-        </section>
+            <section class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900">2. 개인정보 처리의 위탁 및 국외 이전</h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    회사는 서비스의 안정적인 클라우드 데이터 보관, 사용자 인증 및 인프라 관리를 위해 다음과 같이 개인정보 처리를 위탁하고 있습니다.
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-600 pl-2 space-y-1">
+                    <li><strong>수탁자:</strong> Google LLC (Firebase Cloud 서비스)</li>
+                    <li><strong>위탁 업무 내용:</strong> 사용자 인증(Firebase Authentication), 클라우드 데이터 저장(Cloud Firestore), 인프라 및 호스팅 관리</li>
+                    <li><strong>개인정보의 이전:</strong> 데이터는 전송 및 보관 시 암호화(HTTPS/TLS, AES-256)되어 Google의 보안 인프라 내에 안전하게 보관됩니다.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900">3. 개인정보의 보유 기간 및 파기 (회원 탈퇴)</h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    사용자의 개인정보 및 서비스 등록 데이터는 서비스 이용 기간 동안 안전하게 보관 및 처리됩니다. 이용자가 앱 내 메뉴<span class="bg-slate-100 px-1 rounded font-semibold text-slate-700">[설정 > 회원 탈퇴]</span>를 통해 탈퇴를 요청하는 경우, 회사는 수집된 구글 계정 연동 정보와 클라우드 서버(Firestore)에 저장된 해당 사용자의 모든 워크스페이스 및 하위 데이터를 지체 없이 영구 파기합니다.
+                </p>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900">4. 개인정보의 안전성 확보 조치</h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    회사는 데이터의 안전성 확보를 위해 다음과 같은 기술적·관리적 조치를 취하고 있습니다.
+                </p>
+                <ul class="list-disc list-inside text-sm text-slate-600 pl-2 space-y-1">
+                    <li><strong>기술적 조치:</strong> 데이터 전송 시 HTTPS(TLS) 프로토콜 적용, 서버 저장 데이터 암호화(AES-256 기반 Encryption at Rest), Firestore 보안 규칙(Security Rules) 설정을 통한 인가되지 않은 외부 접근 통제</li>
+                    <li><strong>관리적 조치:</strong> 공동 작업자 권한 제어 기능을 통한 접근 권한 최소화 및 데이터 무결성 유지</li>
+                </ul>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900">5. 개인정보 보호책임자 및 문의처</h2>
+                <p class="text-sm leading-relaxed text-slate-600">
+                    개인정보 보호 및 서비스 이용 중 발생하는 권리 행사(열람, 정정, 삭제 등)나 고충 처리를 위한 문의 창구는 다음과 같습니다.
+                    <br>
+                    - 이메일: <a href="mailto:nbit.handykim@gmail.com" class="text-orange-600 underline">nbit.handykim@gmail.com</a>
+                    <br>
+                    - 개발사: nBit AppStudio
+                </p>
+            </section>
+        </div>
 
     </div>
 
