@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nBit AppStudio</title>
-    <!-- Tailwind CSS v4 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- 상단 글로벌 네비게이션 바 -->
     <nav class="max-w-6xl w-full mx-auto px-6 py-6 flex flex-col sm:flex-row gap-4 justify-between items-center">
         <div class="flex items-center gap-2">
             <span class="text-2xl">⚡</span>
             <span class="font-black text-xl tracking-tight text-slate-900">nBit AppStudio</span>
         </div>
         
-        <!-- 소셜 링크 및 언어 전환 그룹 -->
         <div class="flex items-center gap-6">
-            <!-- 소셜 미디어 아이콘 링크 -->
             <div class="flex items-center gap-4 text-slate-500">
                 <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors flex items-center gap-1 text-sm font-medium" title="YouTube">
                     <span>📺</span> <span class="hidden sm:inline">YouTube</span>
@@ -29,7 +25,6 @@
                 </a>
             </div>
 
-            <!-- 우측 상단 세련된 언어 토글 -->
             <div class="flex items-center bg-slate-200/60 p-1 rounded-xl text-xs font-semibold backdrop-blur-md">
                 <button id="btn-en" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-slate-900 shadow-sm">
                     English
@@ -41,10 +36,8 @@
         </div>
     </nav>
 
-    <!-- 메인 콘텐츠 영역 -->
     <main class="flex-grow max-w-5xl w-full mx-auto px-6 py-12 space-y-20">
         
-        <!-- 히어로 섹션 (Hero Section) -->
         <header class="text-center space-y-6 max-w-3xl mx-auto pt-4">
             <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-semibold tracking-wider uppercase">
                 🚀 Innovation in Your Pocket
@@ -57,7 +50,6 @@
             </p>
         </header>
 
-        <!-- [CATEGORY 1] GAMES SECTION -->
         <section class="space-y-6">
             <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
                 <span class="text-2xl">🎮</span>
@@ -65,7 +57,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- SkyRush -->
                 <a href="./skyrush/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group md:col-span-1">
                     <div class="flex items-start gap-5">
                         <img src="./assets/skyrush_icon.png" alt="SkyRush Icon" class="w-16 h-16 rounded-2xl object-cover shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
@@ -80,7 +71,6 @@
             </div>
         </section>
 
-        <!-- [CATEGORY 2] APPLICATIONS SECTION -->
         <section class="space-y-6">
             <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
                 <span class="text-2xl">📱</span>
@@ -88,7 +78,18 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- EveryTimer -->
+                <a href="./luckyaura/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="flex items-start gap-5">
+                        <img src="./assets/luckyaura_icon.png" alt="LuckyAura Icon" class="w-16 h-16 rounded-2xl object-cover shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition-colors">LuckyAura</h3>
+                            <p id="desc-luckyaura" class="text-slate-500 text-sm leading-relaxed">
+                                An intuitive fortune-telling platform delivering personalized daily fortunes, luck scores, and daily advice based on your name and birth date.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
                 <a href="./everytimer/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group">
                     <div class="flex items-start gap-5">
                         <img src="./assets/everytimer_icon.png" alt="EveryTimer Icon" class="w-16 h-16 rounded-2xl object-cover shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
@@ -101,7 +102,6 @@
                     </div>
                 </a>
 
-                <!-- MemberBook -->
                 <a href="./memberbook/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group">
                     <div class="flex items-start gap-5">
                         <img src="./assets/memberbook_icon.png" alt="MemberBook Icon" class="w-16 h-16 rounded-2xl object-cover shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
@@ -114,7 +114,6 @@
                     </div>
                 </a>
 
-                <!-- Antitheft -->
                 <a href="./antitheft/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group">
                     <div class="flex items-start gap-5">
                         <img src="./assets/antitheft_icon.png" alt="Antitheft Icon" class="w-16 h-16 rounded-2xl object-cover shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
@@ -131,10 +130,8 @@
 
     </main>
 
-    <!-- 고급스러운 하단 푸터 -->
     <footer class="bg-slate-900 text-slate-400 mt-24 py-12 px-6 border-t border-slate-800 text-center text-xs">
         <div class="max-w-5xl mx-auto space-y-6">
-            <!-- 하단 SNS 링크 -->
             <div class="flex justify-center gap-6 text-sm text-slate-400">
                 <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">YouTube</a>
                 <a href="#" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
@@ -149,7 +146,6 @@
         </div>
     </footer>
 
-    <!-- 실시간 다국어 변환 엔진 -->
     <script>
         const translations = {
             en: {
@@ -158,6 +154,7 @@
                 titleGames: "Games",
                 titleApps: "Applications",
                 skyrushDesc: "An exhilarating 2D action game featuring a brave polar bear tackling dynamic environmental challenges. Built with stunning visual frameworks.",
+                luckyauraDesc: "An intuitive fortune-telling platform delivering personalized daily fortunes, luck scores, and daily advice based on your name and birth date.",
                 everytimerDesc: "The ultimate high-performance interval and routine multi-timer suite engineered perfectly for workouts, deep study, and precision task management.",
                 memberbookDesc: "A robust, highly integrated directory framework built to coordinate team registries, active attendance, and unified cloud organization flawlessly.",
                 antitheftDesc: "An advanced security platform leveraging military-grade APIs to capture unauthorized intruder telemetry and send evidence securely to your box.",
@@ -169,6 +166,7 @@
                 titleGames: "게임",
                 titleApps: "애플리케이션",
                 skyrushDesc: "역동적인 환경 속에서 장애물을 돌파하는 용감한 북극곰의 이야기를 담은 2D 액션 게임입니다. 아름다운 그래픽과 최적화된 액션을 제공합니다.",
+                luckyauraDesc: "이름과 생월일만으로 매일 새로 업데이트되는 맞춤형 운세, 운세 지수, 오늘의 럭키 픽을 한눈에 파악할 수 있는 운세 플랫폼입니다.",
                 everytimerDesc: "운동, 학습, 작업 관리 등 모든 일상 루틴을 완벽하게 동기화할 수 있도록 설계된 고성능 인터벌 멀티 타이머 패키지입니다.",
                 memberbookDesc: "멤버 명부 관리, 출석 체크 및 강력한 클라우드 툴 연동 시스템을 통해 단체를 효율적으로 조율할 수 있는 통합 프레임워크입니다.",
                 antitheftDesc: "보안 API를 활용하여 디바이스에 접근하는 침입자를 탐지하고, 촬영된 사진 및 비디오 증거를 본인 메일함으로 즉시 전송하는 보안 플랫폼입니다.",
@@ -188,6 +186,7 @@
 
             // 카드 설명란 변경
             document.getElementById('desc-skyrush').innerText = translations[lang].skyrushDesc;
+            document.getElementById('desc-luckyaura').innerText = translations[lang].luckyauraDesc;
             document.getElementById('desc-everytimer').innerText = translations[lang].everytimerDesc;
             document.getElementById('desc-memberbook').innerText = translations[lang].memberbookDesc;
             document.getElementById('desc-antitheft').innerText = translations[lang].antitheftDesc;
