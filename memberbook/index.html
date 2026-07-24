@@ -66,12 +66,23 @@
                 A robust, highly integrated directory framework built to coordinate team registries, active attendance, and unified cloud organization flawlessly.
             </p>
             
-            <div class="pt-2">
+            <div class="pt-2 flex flex-wrap justify-center gap-4">
                 <a href="https://play.google.com/store/apps/details?id=com.nbit.memberbook"
                    target="_blank"
                    rel="noopener noreferrer"
                    class="inline-flex items-center justify-center px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-md shadow-orange-100">
                     Available on Google Play →
+                </a>
+                <!-- 유튜브 바로가기 버튼 추가 -->
+                <a id="btn-youtube"
+                   href="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-md shadow-red-100">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    Watch Preview Video
                 </a>
             </div>
         </header>
@@ -94,6 +105,26 @@
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <!-- 신규: 유튜브 영상 임베드 섹션 -->
+        <section class="space-y-6 max-w-4xl mx-auto">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                <span class="text-2xl">🎬</span>
+                <h2 id="title-video" class="text-2xl font-black tracking-tight text-slate-900 uppercase">Video Preview</h2>
+            </div>
+            
+            <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-slate-200/60 bg-black">
+                <!-- YOUR_YOUTUBE_VIDEO_ID 부분을 실제 유튜브 비디오 ID로 교체하세요 -->
+                <iframe 
+                    class="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/hFRWQGbdnbs?si=LT8uVvwR8dAg4QMS" 
+                    title="MemberBook App Preview" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </section>
 
@@ -153,7 +184,6 @@
                 </p>
                 
                 <div class="text-base font-semibold space-x-6 pt-6 border-t border-slate-100 flex justify-center">
-                    <!-- URL 경로는 고정하고 출력 텍스트만 스크립트가 치환합니다 -->
                     <a id="link-privacy-body" href="./privacy-policy.html" class="text-orange-600 underline hover:text-orange-800 transition-colors">Privacy Policy</a>
                     <a id="link-terms-body" href="./terms.html" class="text-orange-600 underline hover:text-orange-800 transition-colors">Terms of Service</a>
                 </div>
@@ -204,6 +234,8 @@
         const translations = {
             en: {
                 heroDesc: "A robust, highly integrated directory framework built to coordinate team registries, active attendance, and unified cloud organization flawlessly.",
+                titleVideo: "Video Preview",
+                btnYoutube: "Watch Preview Video",
                 titleFeatures: "Core Features",
                 f1Title: "Member Directory",
                 f1Desc: "Effortlessly structure registry profiles, sort custom fields, and navigate extensive organization rosters with ease.",
@@ -219,6 +251,8 @@
             },
             ko: {
                 heroDesc: "단체의 회원 명부 관리, 정밀한 출석 체크 및 강력한 클라우드 스프레드시트 툴 연동 시스템을 통해 조직을 완벽히 조율하는 효율적인 관리자 프레임워크입니다.",
+                titleVideo: "소개 영상",
+                btnYoutube: "미리보기 영상 보기",
                 titleFeatures: "핵심 앱 기능",
                 f1Title: "회원 명부 일괄 관리",
                 f1Desc: "구성원들의 프로필 구조를 자유롭게 커스텀하여 필드를 정렬하고, 대규모 명부 데이터를 한눈에 신속하게 파악하세요.",
@@ -238,6 +272,12 @@
             document.documentElement.lang = lang;
 
             document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
+            document.getElementById('title-video').innerText = translations[lang].titleVideo;
+            
+            // 유튜브 버튼 텍스트 변경 (아이콘 유지)
+            const btnYoutube = document.getElementById('btn-youtube');
+            btnYoutube.childNodes[2].nodeValue = " " + translations[lang].btnYoutube;
+
             document.getElementById('title-features').innerText = translations[lang].titleFeatures;
             document.getElementById('title-privacy').innerText = translations[lang].titlePrivacy;
             document.getElementById('privacy-desc').innerText = translations[lang].privacyDesc;
