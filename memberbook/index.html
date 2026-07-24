@@ -6,6 +6,27 @@
     <title>MemberBook - Official Website</title>
     <!-- Tailwind CSS v4 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        /* MemberBook 오렌지 테마에 맞춘 Swiper 커스텀 스타일 */
+        .swiper-pagination-bullet-active {
+            background-color: #ea580c !important; /* Tailwind orange-600 */
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #ea580c !important;
+            background: rgba(255, 255, 255, 0.85);
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        .swiper-button-next::after, .swiper-button-prev::after {
+            font-size: 18px !important;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between">
@@ -54,6 +75,27 @@
                 </a>
             </div>
         </header>
+
+        <!-- 이미지 슬라이더 섹션 (slide1.jpg ~ slide3.jpg) -->
+        <section class="max-w-4xl mx-auto">
+            <div class="swiper main-slider rounded-3xl overflow-hidden shadow-2xl border border-slate-200/60">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./slide1.jpg" alt="MemberBook Screen 1" class="w-full h-[320px] sm:h-[450px] object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./slide2.jpg" alt="MemberBook Screen 2" class="w-full h-[320px] sm:h-[450px] object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./slide3.jpg" alt="MemberBook Screen 3" class="w-full h-[320px] sm:h-[450px] object-cover">
+                    </div>
+                </div>
+                <!-- 인디케이터 및 좌우 이동 버튼 -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
 
         <!-- 핵심 기능 섹션 -->
         <section class="space-y-6">
@@ -105,7 +147,7 @@
                 <h2 id="title-privacy" class="text-2xl font-black tracking-tight text-slate-900 uppercase">Privacy & Terms</h2>
             </div>
 
-            <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 text-center max-w-2xl mx-auto p-10 space-y-6">
+            <div class="bg-white border border-slate-100 rounded-3xl shadow-xl shadow-slate-200/40 text-center max-w-2xl mx-auto p-10 space-y-6">
                 <p id="privacy-desc" class="text-slate-500 text-sm md:text-base leading-relaxed">
                     We value your privacy. MemberBook is committed to protecting user data and providing a safe mobile environment. Read our legal documentation below.
                 </p>
@@ -137,8 +179,28 @@
         </div>
     </footer>
 
-    <!-- 실시간 번역 전환 처리 스크립트 -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- 실시간 번역 전환 및 슬라이더 초기화 스크립트 -->
     <script>
+        // Swiper 슬라이더 초기화
+        const swiper = new Swiper('.main-slider', {
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
         const translations = {
             en: {
                 heroDesc: "A robust, highly integrated directory framework built to coordinate team registries, active attendance, and unified cloud organization flawlessly.",
@@ -188,7 +250,6 @@
             document.getElementById('f3-title').innerText = translations[lang].f3Title;
             document.getElementById('f3-desc').innerText = translations[lang].f3Desc;
 
-            // URL 주소는 변경 없이, 화면에 노출되는 링크 글자만 매핑 교체
             const pBody = document.getElementById('link-privacy-body');
             const tBody = document.getElementById('link-terms-body');
             const pFoot = document.getElementById('link-privacy-footer');
