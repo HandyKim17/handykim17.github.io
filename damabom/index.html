@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DamaBom - Official Website</title>
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#FDFBF7] text-stone-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-rose-100 selection:text-rose-900">
+
+    <!-- 상단 글로벌 네비게이션 바 -->
+    <nav class="max-w-6xl w-full mx-auto px-6 py-6 flex flex-col sm:flex-row gap-4 justify-between items-center">
+        <!-- 첫 페이지로 이동하는 홈버튼 링크 -->
+        <a href="../" class="flex items-center gap-2 group cursor-pointer decoration-none">
+            <span class="text-2xl transition-transform group-hover:scale-110">⚡</span>
+            <span class="font-black text-xl tracking-tight text-stone-900 group-hover:text-emerald-700 transition-colors">nBit AppStudio</span>
+        </a>
+        
+        <!-- 우측 상단 실시간 언어 전환 탭 토글 버튼 -->
+        <div class="flex items-center bg-stone-200/70 p-1 rounded-xl text-xs font-semibold backdrop-blur-md">
+            <button id="btn-en" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-stone-900 shadow-sm">
+                English
+            </button>
+            <button id="btn-ko" onclick="setLanguage('ko')" class="px-3 py-1.5 rounded-lg transition-all cursor-pointer text-stone-500 hover:text-stone-900">
+                한국어
+            </button>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-6 py-12 space-y-20">
+        
+        <!-- 히어로 섹션 (Hero Section) -->
+        <header class="text-center space-y-6 max-w-3xl mx-auto pt-4">
+            <div class="inline-block relative">
+                <!-- 아이콘 경로는 실제 파일명에 맞게 확인해 주세요 -->
+                <img src="../assets/damabom_icon.png" alt="DamaBom Icon" class="w-24 h-24 rounded-3xl object-cover shadow-xl shadow-rose-200/50 border-2 border-rose-100 mx-auto bg-white">
+            </div>
+            <div class="space-y-2">
+                <span id="hero-badge" class="inline-block px-3.5 py-1 rounded-full bg-rose-100/80 text-rose-700 text-xs font-bold tracking-wide">
+                    Capture Your Spring Days
+                </span>
+                <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold tracking-tight text-stone-900 leading-tight">
+                    DamaBom
+                </h1>
+            </div>
+            <p id="hero-desc" class="text-stone-600 text-base md:text-xl leading-relaxed max-w-2xl mx-auto">
+                A clutter-free, warm diary app designed to capture your everyday moments like a bright spring day.
+            </p>
+            
+            <div class="pt-2">
+                <a href="https://play.google.com/store/apps/details?id=com.nbit.damabom"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl transition duration-200 shadow-md shadow-emerald-200/60">
+                    Available on Google Play →
+                </a>
+            </div>
+        </header>
+
+        <!-- 핵심 기능 섹션 -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-stone-200/80 pb-3">
+                <span class="text-2xl">🌸</span>
+                <h2 id="title-features" class="text-2xl font-black tracking-tight text-stone-900 uppercase">Core Features</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white border border-rose-100/80 rounded-3xl p-8 shadow-xl shadow-stone-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-rose-50 text-rose-500 flex items-center justify-center text-2xl font-bold rounded-2xl border border-rose-100">
+                        ✍️
+                    </div>
+                    <h3 id="f1-title" class="text-xl font-bold text-stone-900">Simple &amp; Clutter-Free</h3>
+                    <p id="f1-desc" class="text-stone-500 text-sm leading-relaxed">
+                        Focus purely on your thoughts and daily moments with a clean, distraction-free writing experience.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white border border-rose-100/80 rounded-3xl p-8 shadow-xl shadow-stone-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold rounded-2xl border border-emerald-100">
+                        🖼️
+                    </div>
+                    <h3 id="f2-title" class="text-xl font-bold text-stone-900">Photo Gallery View</h3>
+                    <p id="f2-desc" class="text-stone-500 text-sm leading-relaxed">
+                        Browse all the photos attached to your entries in one curated gallery to relive your visual memories at a glance.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white border border-rose-100/80 rounded-3xl p-8 shadow-xl shadow-stone-200/40 space-y-4">
+                    <div class="w-12 h-12 bg-amber-50 text-amber-600 flex items-center justify-center text-2xl font-bold rounded-2xl border border-amber-100">
+                        🔍
+                    </div>
+                    <h3 id="f3-title" class="text-xl font-bold text-stone-900">Search &amp; On This Day</h3>
+                    <p id="f3-desc" class="text-stone-500 text-sm leading-relaxed">
+                        Find past entries effortlessly with instant keyword search and revisit what you wrote exactly one year ago.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 법적 고지 및 약관 섹션 (텍스트 및 ID 완전 고정) -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-stone-200/80 pb-3">
+                <span class="text-2xl">⚖️</span>
+                <h2 id="title-privacy" class="text-2xl font-black tracking-tight text-stone-900 uppercase">Privacy &amp; Terms</h2>
+            </div>
+
+            <div class="bg-white border border-rose-100/80 rounded-3xl p-8 shadow-xl shadow-stone-200/40 text-center max-w-2xl mx-auto p-10 space-y-6">
+                <p id="privacy-desc" class="text-stone-500 text-sm md:text-base leading-relaxed">
+                    We value your privacy. DamaBom is committed to protecting your personal memories and providing a safe journaling environment. Read our legal documentation below.
+                </p>
+                
+                <div class="text-base font-semibold space-x-6 pt-6 border-t border-stone-100 flex justify-center">
+                    <a href="./privacy-policy.html" class="text-emerald-700 underline hover:text-emerald-900 transition-colors">Privacy Policy</a>
+                    <a href="./terms.html" class="text-emerald-700 underline hover:text-emerald-900 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 하단 푸터 (텍스트 고정) -->
+    <footer class="bg-stone-900 text-stone-400 mt-24 py-12 px-6 border-t border-stone-800 text-center text-xs">
+        <div class="max-w-5xl mx-auto space-y-4">
+            <div class="flex justify-center gap-6 text-sm text-stone-400 mb-2">
+                <a href="./privacy-policy.html" class="hover:text-white transition-colors underline">Privacy Policy</a>
+                <a href="./terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="mailto:handykim17@gmail.com" class="hover:text-white transition-colors">Support</a>
+            </div>
+            <p id="footer-desc" class="text-stone-500 max-w-md mx-auto leading-relaxed">
+                This website is the official homepage of the DamaBom mobile application and provides information regarding app features, privacy practices, and terms of service.
+            </p>
+            <p class="text-stone-600 font-medium">
+                &copy; 2026 nBit AppStudio. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 다국어 전환 스크립트 -->
+    <script>
+        const translations = {
+            en: {
+                heroBadge: "Capture Your Spring Days",
+                heroTitle: "DamaBom",
+                heroDesc: "A clutter-free, warm diary app designed to capture your everyday moments like a bright spring day.",
+                titleFeatures: "Core Features",
+                f1Title: "Simple & Clutter-Free",
+                f1Desc: "Focus purely on your thoughts and daily moments with a clean, distraction-free writing experience.",
+                f2Title: "Photo Gallery View",
+                f2Desc: "Browse all the photos attached to your entries in one curated gallery to relive your visual memories at a glance.",
+                f3Title: "Search & On This Day",
+                f3Desc: "Find past entries effortlessly with instant keyword search and revisit what you wrote exactly one year ago.",
+                titlePrivacy: "Privacy & Terms",
+                privacyDesc: "We value your privacy. DamaBom is committed to protecting your personal memories and providing a safe journaling environment. Read our legal documentation below.",
+                footerDesc: "This website is the official homepage of the DamaBom mobile application and provides information regarding app features, privacy practices, and terms of service."
+            },
+            ko: {
+                heroBadge: "너의 봄날을 담다, 일상을 담아봄",
+                heroTitle: "담아, 봄 (DamaBom)",
+                heroDesc: "복잡한 기능 없이 오직 나의 하루와 감정에 집중할 수 있도록 설계된 따뜻하고 심플한 일기장 앱입니다.",
+                titleFeatures: "핵심 앱 기능",
+                f1Title: "군더더기 없는 심플한 기록",
+                f1Desc: "불필요한 요소를 덜어낸 깔끔한 화면에서 온전히 나만의 생각과 소소한 일상을 편하게 기록해 보세요.",
+                f2Title: "갤러리 모아보기",
+                f2Desc: "일기 속에 담아둔 소중한 사진들만 한곳에 모아 앨범처럼 한눈에 둘러보며 추억을 되새길 수 있습니다.",
+                f3Title: "쉬운 검색과 1년 전 오늘",
+                f3Desc: "원하는 키워드로 지나간 일기를 빠르게 찾아보고, 1년 전 오늘 내가 남겼던 기록을 다시 들여다보세요.",
+                titlePrivacy: "개인정보 보호 및 약관",
+                privacyDesc: "nBit AppStudio는 이용자의 소중한 기록과 개인정보를 안전하게 보호하며, 신뢰할 수 있는 일기장 환경을 제공하기 위해 최선을 다합니다.",
+                footerDesc: "본 웹사이트는 담아, 봄(DamaBom) 모바일 애플리케이션의 공식 홈페이지이며, 앱 기능, 개인정보처리방침 및 서비스 이용약관 정보를 제공합니다."
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+
+            // 텍스트 노드 교체
+            document.getElementById('hero-badge').innerText = translations[lang].heroBadge;
+            document.getElementById('hero-title').innerText = translations[lang].heroTitle;
+            document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
+            document.getElementById('title-features').innerText = translations[lang].titleFeatures;
+            document.getElementById('title-privacy').innerText = translations[lang].titlePrivacy;
+            document.getElementById('privacy-desc').innerText = translations[lang].privacyDesc;
+            document.getElementById('footer-desc').innerText = translations[lang].footerDesc;
+
+            // 카드 정보 갱신
+            document.getElementById('f1-title').innerText = translations[lang].f1Title;
+            document.getElementById('f1-desc').innerText = translations[lang].f1Desc;
+            document.getElementById('f2-title').innerText = translations[lang].f2Title;
+            document.getElementById('f2-desc').innerText = translations[lang].f2Desc;
+            document.getElementById('f3-title').innerText = translations[lang].f3Title;
+            document.getElementById('f3-desc').innerText = translations[lang].f3Desc;
+
+            // 토글 버튼 클래스 액티브 처리
+            const btnEn = document.getElementById('btn-en');
+            const btnKo = document.getElementById('btn-ko');
+
+            if (lang === 'en') {
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-stone-900 shadow-sm";
+                btnKo.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer text-stone-500 hover:text-stone-900";
+            } else {
+                btnKo.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer bg-white text-stone-900 shadow-sm";
+                btnEn.className = "px-3 py-1.5 rounded-lg transition-all cursor-pointer text-stone-500 hover:text-stone-900";
+            }
+        }
+    </script>
+
+</body>
+</html>
