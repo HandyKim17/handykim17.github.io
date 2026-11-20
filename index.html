@@ -117,7 +117,20 @@
                     </div>
                 </a>
 
-                <!-- 4. LuckyAura -->
+                <!-- 4. DamaBom (담아, 봄) -->
+                <a href="./damabom/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="flex items-start gap-5">
+                        <img src="./assets/damabom_icon.png" alt="DamaBom Icon" class="w-16 h-16 rounded-2xl object-cover shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-rose-500 transition-colors">DamaBom</h3>
+                            <p id="desc-damabom" class="text-slate-500 text-sm leading-relaxed">
+                                A clutter-free, warm diary app designed to capture your everyday moments, photo memories, and reflections from a year ago.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 5. LuckyAura -->
                 <a href="./luckyaura/" class="block bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-200/40 hover:shadow-2xl transition-all duration-300 group">
                     <div class="flex items-start gap-5">
                         <img src="./assets/luckyaura_icon.png" alt="LuckyAura Icon" class="w-16 h-16 rounded-2xl object-cover shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
@@ -162,6 +175,7 @@
                 everytimerDesc: "The ultimate high-performance interval and routine multi-timer suite engineered perfectly for workouts, deep study, and precision task management.",
                 memberbookDesc: "A robust, highly integrated directory framework built to coordinate team registries, active attendance, and unified cloud organization flawlessly.",
                 antitheftDesc: "An advanced security platform leveraging military-grade APIs to capture unauthorized intruder telemetry and send evidence securely to your box.",
+                damabomDesc: "A clutter-free, warm diary app designed to capture your everyday moments, photo memories, and reflections from a year ago.",
                 oauth: "This domain is verified and used for Google OAuth and Gmail API services."
             },
             ko: {
@@ -174,6 +188,7 @@
                 everytimerDesc: "운동, 학습, 작업 관리 등 모든 일상 루틴을 완벽하게 동기화할 수 있도록 설계된 고성능 인터벌 멀티 타이머 패키지입니다.",
                 memberbookDesc: "멤버 명부 관리, 출석 체크 및 강력한 클라우드 툴 연동 시스템을 통해 단체를 효율적으로 조율할 수 있는 통합 프레임워크입니다.",
                 antitheftDesc: "보안 API를 활용하여 디바이스에 접근하는 침입자를 탐지하고, 촬영된 사진 및 비디오 증거를 본인 메일함으로 즉시 전송하는 보안 플랫폼입니다.",
+                damabomDesc: "군더더기 없는 깔끔한 화면에서 소소한 일상과 사진 갤러리, 1년 전 오늘의 기록을 따뜻하게 담아내는 감성 일기장 앱입니다.",
                 oauth: "본 도메인은 Google OAuth 및 Gmail API 서비스용으로 인증된 공식 도메인입니다."
             }
         };
@@ -194,6 +209,7 @@
             document.getElementById('desc-everytimer').innerText = translations[lang].everytimerDesc;
             document.getElementById('desc-memberbook').innerText = translations[lang].memberbookDesc;
             document.getElementById('desc-antitheft').innerText = translations[lang].antitheftDesc;
+            document.getElementById('desc-damabom').innerText = translations[lang].damabomDesc;
 
             // 토글 버튼 클래스 갱신
             const btnEn = document.getElementById('btn-en');
